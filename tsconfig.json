@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        //Куда производится сборка
+        "outDir": "./dist/",
+        //Обязует типизировать любую переменную
+        "noImplicitAny": true,
+        //Спсобы модульной сборки
+        "module": "ESNext",
+        //Версия стандарта в который компилится код
+        "target": "es5",
+        "jsx": "react-jsx",
+        //обработка js файлов
+        "allowJs": true,
+        "moduleResolution": "node",
+        // Для абсолютного импорта
+        //"baseUrl":".",
+        //Замена common.js на import/export
+        "esModuleInterop": true,
+        //Поддержка export default
+        "allowSyntheticDefaultImports": true,
+    },
+    "ts-node": {
+        "compilerOptions": {
+          "module": "CommonJS"
+        }
+    }
+}
