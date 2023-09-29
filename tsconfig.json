@@ -13,7 +13,10 @@
         "allowJs": true,
         "moduleResolution": "node",
         // Для абсолютного импорта
-        //"baseUrl":".",
+        "baseUrl":".",
+        "paths": {
+            "*": ["./src/*"]
+        },
         //Замена common.js на import/export
         "esModuleInterop": true,
         //Поддержка export default
