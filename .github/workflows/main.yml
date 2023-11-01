@@ -20,8 +20,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install modules
         run: npm install
+      - name: init loki
+        run: npx loki init --config ./config/storybook
       - name: install loki
-        run: concurrently \"npm i --save-dev loki --legacy-peer-deps\" \"npx loki init --config ./config/storybook\"
+        run: npm i --save-dev loki --legacy-peer-deps
       - name: build production project
         run: npm run build:prod
       - name: linting typescript
