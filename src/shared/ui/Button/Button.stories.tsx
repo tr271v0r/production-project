@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
+// 12:03
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Button, ThemeButton } from './Button';
+import { Button, ButtonSize, ButtonTheme } from './Button';
 
 const meta: Meta<typeof Button> = {
     title: 'shared/Button',
@@ -23,7 +23,7 @@ type Story = StoryObj<typeof Button>;
 export const Clear: Story = {
     args: {
         children: '123',
-        theme: ThemeButton.CLEAR,
+        theme: ButtonTheme.CLEAR,
     },
 };
 export const ClearDark: Story = {
@@ -34,14 +34,30 @@ export const ClearDark: Story = {
     ],
     args: {
         children: '123',
-        theme: ThemeButton.CLEAR,
+        theme: ButtonTheme.CLEAR,
     },
 };
 
 export const Outline: Story = {
     args: {
         children: '123',
-        theme: ThemeButton.OUTLINE,
+        theme: ButtonTheme.OUTLINE,
+    },
+};
+
+export const OutlineSizeL: Story = {
+    args: {
+        children: '123',
+        theme: ButtonTheme.OUTLINE,
+        size: ButtonSize.L,
+    },
+};
+
+export const OutlineSizeXL: Story = {
+    args: {
+        children: '123',
+        theme: ButtonTheme.OUTLINE,
+        size: ButtonSize.XL,
     },
 };
 
@@ -53,6 +69,55 @@ export const OutlineDark: Story = {
     ],
     args: {
         children: '123',
-        theme: ThemeButton.OUTLINE,
+        theme: ButtonTheme.OUTLINE,
+    },
+};
+
+export const Background: Story = {
+    args: {
+        children: '123',
+        theme: ButtonTheme.BACKGROUND,
+    },
+};
+
+export const BackgroundInverted: Story = {
+    args: {
+        children: '123',
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+    },
+};
+
+export const Square: Story = {
+    args: {
+        children: '>',
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+        square: true,
+    },
+};
+
+export const SquareSizeM: Story = {
+    args: {
+        children: '>',
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+        square: true,
+        size: ButtonSize.M,
+    },
+};
+
+export const SquareSizeL: Story = {
+    args: {
+        children: '>',
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+        square: true,
+        size: ButtonSize.L,
+    },
+};
+
+export const SquareSizeXL: Story = {
+    args: {
+        children: '>',
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+        square: true,
+        size: ButtonSize.XL,
     },
 };
