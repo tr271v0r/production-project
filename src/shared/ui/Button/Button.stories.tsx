@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-// 12:03
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { Button, ButtonSize, ButtonTheme } from './Button';
@@ -26,6 +25,14 @@ export const Clear: Story = {
         theme: ButtonTheme.CLEAR,
     },
 };
+
+export const ClearInverted: Story = {
+    args: {
+        children: '123',
+        theme: ButtonTheme.CLEAR_INVERTED,
+    },
+};
+
 export const ClearDark: Story = {
     decorators: [
         (Story) => (
