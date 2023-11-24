@@ -32,8 +32,8 @@ export const Navbar = ({ className }: NavbarProps) => {
             </Button>
 
             <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-                {/* // eslint-disable-next-line */}
-                Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+                {/* eslint-disable-next-line */}
+                {t('Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.')}
             </Modal>
         </div>
     );
