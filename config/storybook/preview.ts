@@ -18,7 +18,6 @@ const preview: Preview = {
             (Story) => (
                 // eslint-disable-next-line no-sequences
                 StyleDecorator(Story)
-
             ),
         ],
         actions: { argTypesRegex: '^on[A-Z].*' },

@@ -1,6 +1,5 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
-import { classNames } from 'shared/lib/classNames/classNames';
 
 interface PortalProps {
     children: React.ReactNode;
@@ -10,7 +9,7 @@ interface PortalProps {
 export const Portal = (props: PortalProps) => {
     const {
         children,
-        element = document.body,
+        element = document.getElementById('storybook-root') ?? document.body,
     } = props;
 
     return createPortal(children, element);
