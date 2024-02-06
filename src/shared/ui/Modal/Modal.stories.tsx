@@ -7,7 +7,6 @@ import { Portal } from '../Portal/Portal';
 const meta: Meta<typeof Modal> = {
     title: 'shared/Modal',
     component: Modal,
-    
     parameters: {
         layout: 'centered',
     },

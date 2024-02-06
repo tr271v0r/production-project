@@ -49,7 +49,7 @@ export default {
         '\\.(s?css)$': 'identity-obj-proxy',
         // маппер, который будет возвращать пустой компоненто для SVG
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-        '^axios$': "axios/dist/node/axios.cjs"
+        '^axios$': 'axios/dist/node/axios.cjs',
     },
 
     // Indicates whether the coverage information should be collected while executing the test
