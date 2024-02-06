@@ -6,6 +6,6 @@ export {
     StoreProvider,
     createReduxStore,
     StateSchema,
-    
-    ReduxStoreWithManager
+
+    ReduxStoreWithManager,
 };
