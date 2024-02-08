@@ -15,6 +15,13 @@
       }
     ],
     "profile": {
-      "name": "typicode"
+      "first": "Dima",
+      "lastname": "Kasimov",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Kirov",
+      "username": "admin",
+      "avatar": "https://webmg.ru/wp-content/uploads/2022/10/0_8af2b_347f9c8f_xxl.jpg"
     }
 }
