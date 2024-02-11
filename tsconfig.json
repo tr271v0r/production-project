@@ -11,6 +11,7 @@
         "jsx": "react-jsx",
         //обработка js файлов
         "allowJs": true,
+        "strict": true,
         "moduleResolution": "node",
         // Для абсолютного импорта
         "baseUrl":".",

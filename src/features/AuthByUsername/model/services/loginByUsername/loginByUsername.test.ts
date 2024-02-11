@@ -5,11 +5,6 @@ import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { loginByUsername } from './loginByUsername';
 
-// Модуль который мокаем
-jest.mock('axios');
-
-const mockedAxios = jest.mocked(axios, true);
-
 describe('loginByUsername.test', () => {
     // let dispatch: Dispatch;
     // let getState: () => StateSchema;
@@ -57,30 +52,28 @@ describe('loginByUsername.test', () => {
     test('success login', async () => {
         const userValue = { username: '123', id: '1' };
 
-        mockedAxios.post.mockReturnValue(Promise.resolve({
-            data: userValue,
-        }));
-
         const thunk = new TestAsyncThunk(loginByUsername);
+        thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));
         const result = await thunk.callThunk({ username: '123', password: '123' });
 
         expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
         expect(thunk.dispatch).toHaveBeenCalledTimes(3);// проверка количества вызовов dispatch
-        expect(mockedAxios.post).toHaveBeenCalled();// проверка на то, выполнился ли запрос на сервак
+        expect(thunk.api.post).toHaveBeenCalled();// проверка на то, выполнился ли запрос на сервак
         expect(result.meta.requestStatus).toBe('fulfilled');// запрос выполнился и никаких ошибок
         expect(result.payload).toEqual(userValue);
     });
 
     test('error login', async () => {
-        mockedAxios.post.mockReturnValue(Promise.resolve({
+        const thunk = new TestAsyncThunk(loginByUsername);
+
+        thunk.api.post.mockReturnValue(Promise.resolve({
             status: 403,
         }));
 
-        const thunk = new TestAsyncThunk(loginByUsername);
         const result = await thunk.callThunk({ username: '123', password: '123' });
 
         expect(thunk.dispatch).toHaveBeenCalledTimes(2);// проверка количества вызовов dispatch
-        expect(mockedAxios.post).toHaveBeenCalled();// проверка на то, выполнился ли запрос на сервак
+        expect(thunk.api.post).toHaveBeenCalled();// проверка на то, выполнился ли запрос на сервак
         expect(result.meta.requestStatus).toBe('rejected');// запрос выполнился и никаких ошибок
         expect(result.payload).toBe('error');
     });

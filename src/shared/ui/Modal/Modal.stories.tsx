@@ -21,15 +21,15 @@ export default meta;
 type Story = StoryObj<typeof Modal>;
 
 export const Primary: Story = {
-    decorators: [
-        (Story) => (
-            <Portal
-                element={document.getElementById('storybook-root')}
-            >
-                <Story />
-            </Portal>
-        ),
-    ],
+    // decorators: [
+    //     (Story) => (
+    //         <Portal
+    //             element={document.getElementById('storybook-root')}
+    //         >
+    //             <Story />
+    //         </Portal>
+    //     ),
+    // ],
     args: {
         isOpen: true,
         children: 'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.',
