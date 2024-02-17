@@ -23,7 +23,7 @@ export const Input = memo((props: InputProps) => {
         type = 'text',
         placeholder,
         autofocus,
-        readonly=false,
+        readonly = false,
         ...otherProps
     } = props;
 
@@ -57,10 +57,10 @@ export const Input = memo((props: InputProps) => {
         setCaretPosition(e?.target?.selectionStart || 0);
     };
 
-    const mods: Mods={
-        [cls.readonly]: readonly 
-    }
-    
+    const mods: Mods = {
+        [cls.readonly]: readonly,
+    };
+
     return (
         <div className={classNames(cls.InputWrapper, {}, [className])}>
             {placeholder && (

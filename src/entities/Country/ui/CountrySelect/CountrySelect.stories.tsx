@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {CountrySelect} from './CountrySelect';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { CountrySelect } from './CountrySelect';
 
 const meta: Meta<typeof CountrySelect> = {
     title: 'enteties/CountrySelect',
@@ -26,7 +26,7 @@ export default meta;
 type Story = StoryObj<typeof CountrySelect>;
 
 export const Primary: Story = {
-   
+
     args: {
 
     },

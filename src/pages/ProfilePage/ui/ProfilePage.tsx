@@ -1,5 +1,16 @@
 // import { BugButton } from 'app/providers/ErrorBoundary';
-import { ProfileCard, fetchProfileData, getProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadonly, profileActions, profileReducer } from 'entities/Profile';
+import {
+    ProfileCard,
+    fetchProfileData,
+    getProfileError,
+    getProfileForm,
+    getProfileIsLoading,
+    getProfileReadonly,
+    getProfileValidateErrors,
+    profileActions,
+    profileReducer,
+    validateProfileError,
+} from 'entities/Profile';
 
 import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -7,9 +18,11 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { errorMonitor } from 'events';
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -20,7 +33,7 @@ interface ProfilePageProps{
 }
 
 const ProfilePage = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
 
     const dispatch = useAppDispatch();
 
@@ -29,40 +42,52 @@ const ProfilePage = () => {
     const isLoading = useSelector(getProfileIsLoading);
     const readonly = useSelector(getProfileReadonly);
 
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    const validateErrorTranslates = {
+        [validateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
+        [validateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
+        [validateProfileError.INCORRECT_COUNTRY]: t('Некорректный регион'),
+        [validateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
+        [validateProfileError.NO_DATA]: t('Данные не указаны'),
+    };
+
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onChangeFirstname = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({first: value || ''}))
+        dispatch(profileActions.updateProfile({ first: value || '' }));
     }, [dispatch]);
 
     const onChangeLastname = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({lastname: value || ''}))
+        dispatch(profileActions.updateProfile({ lastname: value || '' }));
     }, [dispatch]);
 
     const onChangeAge = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({age: Number(value) || 0}))
+        dispatch(profileActions.updateProfile({ age: Number(value) || 0 }));
     }, [dispatch]);
 
     const onChangeCity = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({city: value || ''}))
+        dispatch(profileActions.updateProfile({ city: value || '' }));
     }, [dispatch]);
 
     const onChangeAvatar = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({avatar: value || ''}))
+        dispatch(profileActions.updateProfile({ avatar: value || '' }));
     }, [dispatch]);
 
     const onChangeUsername = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({username: value || ''}))
+        dispatch(profileActions.updateProfile({ username: value || '' }));
     }, [dispatch]);
 
     const onChangeCurrency = useCallback((value?: Currency) => {
-        dispatch(profileActions.updateProfile({currency: value || Currency.RUB}))
+        dispatch(profileActions.updateProfile({ currency: value || Currency.RUB }));
     }, [dispatch]);
 
     const onChangeCountry = useCallback((country?: Country) => {
-        dispatch(profileActions.updateProfile({country}))
+        dispatch(profileActions.updateProfile({ country }));
     }, [dispatch]);
 
     return (
@@ -73,7 +98,14 @@ const ProfilePage = () => {
             <div className={classNames('', {}, [])}>
                 {/* <BugButton /> */}
                 <ProfilePageHeader />
-                <ProfileCard 
+                {validateErrors?.length && validateErrors.map((err) => (
+                    <Text
+                        key={err}
+                        theme={TextTheme.ERROR}
+                        text={validateErrorTranslates[err]}
+                    />
+                ))}
+                <ProfileCard
                     data={formData}
                     isLoading={isLoading}
                     error={error}

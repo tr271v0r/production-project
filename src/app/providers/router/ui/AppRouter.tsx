@@ -6,18 +6,14 @@ import { routeConfig } from 'shared/config/routeConfig/routeConfig';
 import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
 
 const AppRouter = () => {
-    
     const isAuth = useSelector(getUserAuthData);
 
-
-    const routes = useMemo(() => {
-        return Object.values(routeConfig).filter(route => {
-            if(route.authOnly && !isAuth){
-                return false;
-            }
-            return true;
-        })
-    }, [isAuth])
+    const routes = useMemo(() => Object.values(routeConfig).filter((route) => {
+        if (route.authOnly && !isAuth) {
+            return false;
+        }
+        return true;
+    }), [isAuth]);
 
     return (
         <Routes>
@@ -35,7 +31,7 @@ const AppRouter = () => {
                 />
             ))}
         </Routes>
-    )
+    );
 };
 
 export default memo(AppRouter);

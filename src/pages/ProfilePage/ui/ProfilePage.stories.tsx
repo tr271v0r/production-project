@@ -2,6 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
+
+import AvatarImg from 'shared/assets/tests/storybook.jpg';
 import ProfilePage from './ProfilePage';
 
 const meta: Meta<typeof ProfilePage> = {
@@ -23,9 +27,24 @@ type Story = StoryObj<typeof ProfilePage>;
 export const Light: Story = {
     decorators: [
         (Story) => (
+            ThemeDecorator(Theme.LIGHT)(Story)
+        ),
+        (Story) => (
             // eslint-disable-next-line no-sequences
+
             StoreDecorator({
-                profile: {},
+                profile: {
+                    form: {
+                        username: 'admin',
+                        age: 22,
+                        city: 'asf',
+                        country: Country.Belarus,
+                        currency: Currency.USD,
+                        first: 'asd',
+                        lastname: 'kjhgf',
+                        avatar: AvatarImg,
+                    },
+                },
             })(Story)
         ),
     ],
@@ -42,7 +61,18 @@ export const Dark: Story = {
         (Story) => (
             // eslint-disable-next-line no-sequences
             StoreDecorator({
-                loginForm: {},
+                profile: {
+                    form: {
+                        username: 'admin',
+                        age: 22,
+                        city: 'asf',
+                        country: Country.Belarus,
+                        currency: Currency.USD,
+                        first: 'asd',
+                        lastname: 'kjhgf',
+                        avatar: AvatarImg,
+                    },
+                },
             })(Story)
         ),
     ],

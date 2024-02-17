@@ -27,11 +27,11 @@ type Story = StoryObj<typeof Select>;
 
 export const Primary: Story = {
     args: {
-        label:'Укажите значение',
+        label: 'Укажите значение',
         options: [
-            {value:'123', content:'Первый пункт'},
-            {value:'1234', content:'Второй пункт'},
-            {value:'1235', content:'Третий пункт'},
-        ]
+            { value: '123', content: 'Первый пункт' },
+            { value: '1234', content: 'Второй пункт' },
+            { value: '1235', content: 'Третий пункт' },
+        ],
     },
 };

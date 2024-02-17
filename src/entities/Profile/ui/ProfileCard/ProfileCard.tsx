@@ -8,15 +8,15 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
-import cls from './ProfileCard.module.scss';
-import { Profile } from '../../model/types/profile';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Select } from 'shared/ui/Select/Select';
 import { Currency } from 'entities/Currency';
 import { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySelect';
-import { Country } from 'entities/Country'; 
-import { CountrySelect } from 'entities/Country';
+import { Country, CountrySelect } from 'entities/Country';
+
+import { Profile } from '../../model/types/profile';
+import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
     className?: string;
@@ -32,16 +32,16 @@ interface ProfileCardProps {
     onChangeAvatar?: (value?: string) => void;
     onChangeCurrency?: (currency: Currency) => void;
     onChangeCountry?: (country: Country) => void;
-    
+
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
     const { t } = useTranslation('profile');
 
     const {
-        className, 
-        data, 
-        error, 
+        className,
+        data,
+        error,
         isLoading,
         readonly,
         onChangeFirstname,
@@ -54,40 +54,40 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChangeCountry,
     } = props;
 
-    if(isLoading){
-        return(
+    if (isLoading) {
+        return (
             <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
                 <Loader />
             </div>
-        )
+        );
     }
 
-    if(error){
-        return(
+    if (error) {
+        return (
             <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
-                <Text 
-                    theme={TextTheme.ERROR} 
+                <Text
+                    theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке профиля')}
                     text={t('Попробуйте обновить страницу')}
                     align={TextAlign.CENTER}
                 />
             </div>
-        )
+        );
     }
 
     const mods: Mods = {
-        [cls.editing]: !readonly
-    }
+        [cls.editing]: !readonly,
+    };
 
     return (
         <div className={classNames(cls.ProfileCard, mods, [className])}>
 
             <div className={cls.data}>
-                
+
                 {data?.avatar && (
                     <div className={cls.avatarWrapper}>
-                        <Avatar src={data?.avatar}/> 
-                    </div> 
+                        <Avatar src={data?.avatar} />
+                    </div>
                 )}
                 <Input
                     value={data?.first}
@@ -139,11 +139,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     readonly={readonly}
                 />
 
-                <CountrySelect 
-                     className={cls.input}
-                     value={data?.country}
-                     onChange={onChangeCountry}
-                     readonly={readonly}
+                <CountrySelect
+                    className={cls.input}
+                    value={data?.country}
+                    onChange={onChangeCountry}
+                    readonly={readonly}
                 />
             </div>
         </div>

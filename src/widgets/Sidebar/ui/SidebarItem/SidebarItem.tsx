@@ -4,10 +4,10 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { SidebarItemType } from '../Sidebar/model/items';
-import cls from './SidebarItem.module.scss';
 import { getUserAuthData } from 'entities/User';
 import { useSelector } from 'react-redux';
+import { SidebarItemType } from '../Sidebar/model/items';
+import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
     item: SidebarItemType;
@@ -19,7 +19,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
 
     const isAuth = useSelector(getUserAuthData);
 
-    if(item.authOnly && !isAuth){
+    if (item.authOnly && !isAuth) {
         return null;
     }
 
