@@ -3,3 +3,5 @@ import { ArticleDetailsPageAsync } from './ui/ArticleDetailsPage/ArticleDetailsP
 export {
     ArticleDetailsPageAsync as ArticleDetailsPage,
 };
+
+export { ArticleDetailsCommentSchema } from './model/types/ArticleDetailsCommentSchema'
