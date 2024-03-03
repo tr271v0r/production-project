@@ -1,4 +1,3 @@
-
 import { Dispatch } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
@@ -12,6 +11,10 @@ const data: Article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '23.02.2024',
+    user: {
+        id: '1',
+        username: 'admin',
+    },
     type: [ArticleType.IT],
     blocks: [
         {
@@ -87,7 +90,7 @@ describe('fetchArticleById.test', () => {
     test('success', async () => {
         const thunk = new TestAsyncThunk(fetchArticleById);
         thunk.api.get.mockReturnValue(Promise.resolve({ data }));
-        const result = await thunk.callThunk("1");
+        const result = await thunk.callThunk('1');
 
         expect(thunk.api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -101,7 +104,7 @@ describe('fetchArticleById.test', () => {
             status: 403,
         }));
 
-        const result = await thunk.callThunk("1");
+        const result = await thunk.callThunk('1');
         expect(result.meta.requestStatus).toBe('rejected');
     });
 });

@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { CountrySelect } from './CountrySelect';
 
 const meta: Meta<typeof CountrySelect> = {
-    title: 'enteties/CountrySelect',
+    title: 'entities/CountrySelect',
     component: CountrySelect,
     decorators: [
         (Story) => (

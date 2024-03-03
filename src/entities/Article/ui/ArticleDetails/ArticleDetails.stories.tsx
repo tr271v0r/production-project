@@ -6,7 +6,7 @@ import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/t
 import { ArticleDetails } from './ArticleDetails';
 
 const meta: Meta<typeof ArticleDetails> = {
-    title: 'enteties/ArticleDetails',
+    title: 'entities/ArticleDetails',
     component: ArticleDetails,
     parameters: {
         layout: 'centered',
@@ -28,6 +28,10 @@ const article: Article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '23.02.2024',
+    user: {
+        id: '1',
+        username: 'admin',
+    },
     type: [ArticleType.IT],
     blocks: [
         {

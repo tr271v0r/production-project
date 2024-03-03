@@ -12,6 +12,10 @@ const data: Article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '23.02.2024',
+    user: {
+        id: '1',
+        username: 'admin',
+    },
     type: [ArticleType.IT],
     blocks: [
         {
@@ -76,10 +80,9 @@ const data: Article = {
 };
 
 describe('profileSlice.test', () => {
-
     test('test of fetch article by id service pending', () => {
         const state: DeepPartial<ArticleDetailsSchema> = {
-            isLoading: false
+            isLoading: false,
         };
 
         expect(articleDetailsReducer(
@@ -93,7 +96,7 @@ describe('profileSlice.test', () => {
     test('test of fetch article by id service fullfiled', () => {
         const state: DeepPartial<ArticleDetailsSchema> = {
             isLoading: true,
-            data
+            data,
         };
 
         expect(articleDetailsReducer(
@@ -101,7 +104,7 @@ describe('profileSlice.test', () => {
             fetchArticleById.fulfilled(data, '', ''),
         )).toEqual({
             isLoading: false,
-            data
+            data,
         });
     });
 });

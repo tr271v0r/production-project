@@ -4,4 +4,4 @@ export {
     ArticleDetailsPageAsync as ArticleDetailsPage,
 };
 
-export { ArticleDetailsCommentSchema } from './model/types/ArticleDetailsCommentSchema'
+export { ArticleDetailsCommentSchema } from './model/types/ArticleDetailsCommentSchema';

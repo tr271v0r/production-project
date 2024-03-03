@@ -22,6 +22,8 @@ import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { errorMonitor } from 'events';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -52,11 +54,13 @@ const ProfilePage = () => {
         [validateProfileError.NO_DATA]: t('Данные не указаны'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    const { id } = useParams<{id: string}>();
+
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));

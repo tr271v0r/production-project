@@ -16,6 +16,7 @@ const data = {
     currency: Currency.USD,
     first: 'asd',
     lastname: 'kjhgf',
+    id: '1',
 };
 
 describe('fetchProfileData.test', () => {

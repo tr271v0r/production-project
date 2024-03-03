@@ -17,7 +17,10 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "23.02.2024",
-      "type": ["IT"],
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -98,6 +101,30 @@
       "text": "some comment #3 about article",
       "atricleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Когда статья про 3 отметки на Leopard PTA ?",
+      "id": "BT20tBE"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "test",
+      "id": "wo8S192"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "user, where are you?",
+      "id": "1lbvRvs"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "new comment",
+      "id": "kzPdnB7"
     }
   ],
   "users": [
@@ -106,24 +133,38 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album"
+      "avatar": "https://webmg.ru/wp-content/uploads/2022/10/0_8af2b_347f9c8f_xxl.jpg"
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "Дима Бутылкин",
       "password": "123",
       "role": "USER",
-      "avatar": "https://webmg.ru/wp-content/uploads/2022/10/0_8af2b_347f9c8f_xxl.jpg"
+      "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album"
     }
   ],
-  "profile": {
-    "first": "Dimasix",
-    "lastname": "Kasimov",
-    "age": 1,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Kirov",
-    "username": "admin",
-    "avatar": "https://webmg.ru/wp-content/uploads/2022/10/0_8af2b_347f9c8f_xxl.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Dmitriy",
+      "lastname": "Kasimov",
+      "age": 1,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Kirov",
+      "username": "admin",
+      "avatar": "https://webmg.ru/wp-content/uploads/2022/10/0_8af2b_347f9c8f_xxl.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Дима",
+      "lastname": "Бутылкин",
+      "age": 1,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Bratsk",
+      "username": "Дима Бутылкин",
+      "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album"
+    }
+  ]
 }

@@ -9,7 +9,7 @@ import AvatarImg from 'shared/assets/tests/storybook.jpg';
 import { ProfileCard } from './ProfileCard';
 
 const meta: Meta<typeof ProfileCard> = {
-    title: 'enteties/ProfileCard',
+    title: 'entities/ProfileCard',
     component: ProfileCard,
     decorators: [
         (Story) => (

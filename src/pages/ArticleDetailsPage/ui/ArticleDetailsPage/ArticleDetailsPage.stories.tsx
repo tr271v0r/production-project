@@ -6,44 +6,6 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
-const meta: Meta<typeof ArticleDetailsPage> = {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
-    parameters: {
-        layout: 'centered',
-    },
-
-    tags: ['autodocs'],
-    argTypes: {
-
-    },
-};
-
-export default meta;
-type Story = StoryObj<typeof ArticleDetailsPage>;
-
-export const ArticleDetailsPageLight: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
-    args: {
-
-    },
-};
-
-export const ArticleDetailsPageDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
-    args: {
-
-    },
-};
-
 const article: Article = {
     id: '1',
     title: 'Javascript news',
@@ -51,6 +13,10 @@ const article: Article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '23.02.2024',
+    user: {
+        id: '1',
+        username: 'admin',
+    },
     type: [ArticleType.IT],
     blocks: [
         {
@@ -114,19 +80,66 @@ const article: Article = {
     ],
 };
 
-export const Normal: Story = {
+const meta: Meta<typeof ArticleDetailsPage> = {
+    title: 'pages/ArticleDetailsPage',
+    component: ArticleDetailsPage,
     decorators: [
         (Story) => (
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 articleDetails: {
                     data: article,
+                    isLoading: true,
+
                 },
             })(Story)
         ),
+    ],
+    args: {
+
+    },
+    parameters: {
+        layout: 'centered',
+    },
+
+    tags: ['autodocs'],
+    argTypes: {
+
+    },
+};
+
+export default meta;
+type Story = StoryObj<typeof ArticleDetailsPage>;
+
+export const ArticleDetailsPageLight: Story = {
+    decorators: [
         (Story) => (
             // eslint-disable-next-line no-sequences
             ThemeDecorator(Theme.LIGHT)(Story)
+        ),
+    ],
+    args: {
+
+    },
+};
+
+export const ArticleDetailsPageDark: Story = {
+    decorators: [
+        (Story) => (
+            // eslint-disable-next-line no-sequences
+            ThemeDecorator(Theme.DARK)(Story)
+        ),
+    ],
+    args: {
+
+    },
+};
+
+export const ArticleDetailsPageOrange: Story = {
+    decorators: [
+        (Story) => (
+            // eslint-disable-next-line no-sequences
+            ThemeDecorator(Theme.ORANGE)(Story)
         ),
     ],
     args: {

@@ -41,3 +41,14 @@ export const ArticlesPageDark: Story = {
 
     },
 };
+
+export const ArticlesPageOrange: Story = {
+    decorators: [
+        (Story) => (
+            ThemeDecorator(Theme.ORANGE)(Story)
+        ),
+    ],
+    args: {
+
+    },
+};
