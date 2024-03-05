@@ -3,10 +3,22 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 
 import ArticlesPage from './ArticlesPage';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof ArticlesPage> = {
     title: 'pages/ArticlesPage',
     component: ArticlesPage,
+    decorators: [
+        (Story) => (
+            // eslint-disable-next-line no-sequences
+
+            StoreDecorator({
+                articlesPage: {
+                    
+                }
+            })(Story)
+        ),
+    ],
     parameters: {
         layout: 'centered',
     },
