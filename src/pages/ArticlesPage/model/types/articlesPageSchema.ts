@@ -11,4 +11,7 @@ export interface ArticlesPageSchema extends EntityState<Article>{
     page:number;
     limit?: number;
     hasMore: boolean; // загрузили всё, или что-то еще осталось
+
+    // меняется ЕДИНОЖДЫ в момент инициализации кмопонента
+    _inited: boolean;
 }
