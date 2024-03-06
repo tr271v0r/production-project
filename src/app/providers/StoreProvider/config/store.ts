@@ -7,6 +7,7 @@ import { To } from 'history';
 import { CombinedState, Reducer } from 'redux';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
+import { uiReducer } from 'features/UI';
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -17,6 +18,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
+        ui: uiReducer
     };
 
     const reducerManager = createReducerManager(rootReducers);
