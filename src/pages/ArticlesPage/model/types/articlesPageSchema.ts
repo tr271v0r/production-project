@@ -1,5 +1,7 @@
 import { EntityState } from '@reduxjs/toolkit';
-import { Article, ArticleView } from 'entities/Article';
+import { Article, ArticleSortField, ArticleView } from 'entities/Article';
+import { ArticleType } from 'entities/Article';
+import { SortOrder } from 'shared/types';
 
 export interface ArticlesPageSchema extends EntityState<Article>{
     isLoading?: boolean;
@@ -9,8 +11,14 @@ export interface ArticlesPageSchema extends EntityState<Article>{
 
     // pagination
     page:number;
-    limit?: number;
+    limit: number;
     hasMore: boolean; // загрузили всё, или что-то еще осталось
+
+    // filters
+    order: SortOrder;
+    sort: ArticleSortField;
+    search: string;
+    type: ArticleType;
 
     // меняется ЕДИНОЖДЫ в момент инициализации кмопонента
     _inited: boolean;

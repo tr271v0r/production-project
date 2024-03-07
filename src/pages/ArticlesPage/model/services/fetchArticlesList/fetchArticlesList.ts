@@ -1,24 +1,48 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { Article } from 'entities/Article';
-import { getArticlesPageLimit } from '../../selectors/articlesPageSelectors';
+import { Article, ArticleType } from 'entities/Article';
+import { 
+    getArticlesPageLimit, 
+    getArticlesPageNum, 
+    getArticlesPageOrder, 
+    getArticlesPageSearch, 
+    getArticlesPageSort, 
+    getArticlesPageType 
+} from '../../selectors/articlesPageSelectors';
+import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams';
 
 interface FetchArticlesListProps {
-    page: number;
+    replace?: boolean;
 }
 
 export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListProps, ThunkConfig<string>>(
     'articlePage/fetchArticlesList',
     async (props, { extra, rejectWithValue, getState }) => {
-        const { page = 1 } = props;
+        // const { page = 1 } = props;
+        const sort = getArticlesPageSort(getState());
+        const order = getArticlesPageOrder(getState());
+        const search = getArticlesPageSearch(getState());
         const limit = getArticlesPageLimit(getState());
+        const page = getArticlesPageNum(getState());
+        const type = getArticlesPageType(getState());
+
         try {
+            addQueryParams({
+                sort,
+                order,
+                search,
+                type
+            })
             const response = await extra.api.get<Article[]>('/articles', {
                 params: {
                     // нужен для отриисовки аватарки при ArticleView === BIG
                     _expand: 'user',
                     _limit: limit,
                     _page: page,
+                    _sort: sort,
+                    _order: order,
+                    q: search,
+                    type: type === ArticleType.ALL ? undefined : type, 
                 },
             });
 
