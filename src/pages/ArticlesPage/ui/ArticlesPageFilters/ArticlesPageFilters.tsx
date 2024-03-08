@@ -64,8 +64,8 @@ export const ArticlesPageFilters = memo(({className}: ArticlesPageFiltersProps) 
     const onChangeType = useCallback((value: ArticleType) => {
         dispatch(articlesPageActions.setType(value));
         dispatch(articlesPageActions.setPage(1));
-        debouncedFetchData();
-    }, [dispatch, debouncedFetchData]);
+        fetchData();
+    }, [dispatch, fetchData]);
 
     // чтобы массив табов был всегда статичный и НЕ ПЕРЕСОЗДАВАЛСЯ
     
