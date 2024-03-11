@@ -88,7 +88,7 @@
       "id": "2",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
+      "img": "https://mpng.hippopng.com/20180720/ur/kisspng-logo-brand-font-python-5b51d2136c4285.3422375115320888514434.jpg",
       "views": 5204,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -136,7 +136,7 @@
       "id": "4",
       "title": "Scala news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://coursefreedl.com/wp-content/uploads/2020/01/Scala-Zero-To-Hero-Complete-Guide.jpg",
+      "img": "https://e7.pngegg.com/pngimages/875/194/png-clipart-scala-apache-spark-apache-hadoop-stream-big-data-scala-class-text.png",
       "views": 10222,
       "createdAt": "24.01.2022",
       "userId": "1",
@@ -256,7 +256,7 @@
       "id": "9",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "img": "https://www.clipartmax.com/png/middle/238-2381243_safeness-kotlin-android-logo.png",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -595,6 +595,12 @@
       "userId": "1",
       "text": "python!!!",
       "id": "p5rMadd"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "what a good article?",
+      "id": "BXAREn0"
     }
   ],
   "users": [
