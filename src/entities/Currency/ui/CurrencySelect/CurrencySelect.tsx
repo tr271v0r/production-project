@@ -21,7 +21,7 @@ const options = [
 export const CurrencySelect = memo(({
     className, value, onChange, readonly,
 }: CurrencySelectProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
 
     const onChangeHandler = useCallback((value?: string) => {
         onChange?.(value as Currency);
@@ -30,7 +30,7 @@ export const CurrencySelect = memo(({
     return (
         <Select
             className={classNames('', {}, [className])}
-            label={t('Укажите валюту')}
+            label={t('Валюта')}
             options={options}
             value={value}
             onChange={onChangeHandler}
