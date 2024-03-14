@@ -1,7 +1,6 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { Button } from 'shared/ui/Button/Button';
+import { Button } from '../Button/Button';
 import { ButtonTheme } from './Button';
 
 describe('Button', () => {

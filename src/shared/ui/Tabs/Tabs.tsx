@@ -1,7 +1,7 @@
-import { classNames } from "shared/lib/classNames/classNames";
-import { memo, useCallback } from "react";
-import  cls  from './Tabs.module.scss';
-import { Card, CardTheme } from "../Card/Card";
+import { classNames } from 'shared/lib/classNames/classNames';
+import { memo, useCallback } from 'react';
+import cls from './Tabs.module.scss';
+import { Card, CardTheme } from '../Card/Card';
 
 export interface TabItem {
     value: string;
@@ -13,32 +13,32 @@ interface TabsProps {
     tabs: TabItem[];
     value: string;
     onTabClick: (tab: TabItem) => void;
-};
+}
 
 export const Tabs = memo((props: TabsProps) => {
     const {
         className,
         onTabClick,
         tabs,
-        value
+        value,
     } = props;
 
     const clickHandle = useCallback((tab: TabItem) => () => {
         return onTabClick(tab);
-    }, [onTabClick])
+    }, [onTabClick]);
 
     return (
-    <div className={classNames(cls.Tabs, {}, [className])}>
-        {tabs.map(tab => (
-            <Card 
-                theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINE}
-                className={cls.tab} 
-                key={tab.value}
-                onClick={clickHandle(tab)}
-            >
-                {tab.content}
-            </Card>
-        ))}
-    </div>
-  );
+        <div className={classNames(cls.Tabs, {}, [className])}>
+            {tabs.map((tab) => (
+                <Card
+                    theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINE}
+                    className={cls.tab}
+                    key={tab.value}
+                    onClick={clickHandle(tab)}
+                >
+                    {tab.content}
+                </Card>
+            ))}
+        </div>
+    );
 });

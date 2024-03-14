@@ -24,7 +24,7 @@ export const ArticleEditPageLight: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.LIGHT)(Story)
-        )
+        ),
     ],
     args: {
 
@@ -35,7 +35,7 @@ export const ArticleEditPageDark: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.DARK)(Story)
-        )
+        ),
     ],
     args: {
 

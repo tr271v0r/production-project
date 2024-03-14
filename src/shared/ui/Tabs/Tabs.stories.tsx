@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { action } from '@storybook/addon-actions';
 import { Tabs } from './Tabs';
-
-import {action} from '@storybook/addon-actions'
 
 const meta: Meta<typeof Tabs> = {
     title: 'shared/Tabs',
@@ -32,19 +31,18 @@ export const Normal: Story = {
         tabs: [
             {
                 value: 'tab_1',
-                content: 'Tab 1'
+                content: 'Tab 1',
             },
             {
                 value: 'tab_2',
-                content: 'Tab 2'
+                content: 'Tab 2',
             },
             {
                 value: 'tab_3',
-                content: 'Tab 3'
+                content: 'Tab 3',
             },
         ],
         value: 'tab_2',
-        onTabClick: action('onTabClick')
+        onTabClick: action('onTabClick'),
     },
 };
-

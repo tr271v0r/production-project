@@ -8,9 +8,9 @@ import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
-import cls from './Navbar.module.scss';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import cls from './Navbar.module.scss';
 
 interface NavbarProps{
     className?: string;
@@ -37,12 +37,12 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-                 <Text 
+                <Text
                     title={t('Ulbi TV App')}
                     className={cls.appName}
                     theme={TextTheme.INVERTED}
                 />
-                <AppLink 
+                <AppLink
                     theme={AppLinkTheme.SECONDARY}
                     to={RoutePath.article_create}
                     className={cls.createBtn}

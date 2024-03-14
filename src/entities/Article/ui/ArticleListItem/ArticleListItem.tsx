@@ -10,12 +10,12 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {
     Article, ArticleBlockType, ArticleTextBlock, ArticleView,
 } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
 
 interface ArticleListItemProps {
     className?: string;
@@ -29,7 +29,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         className,
         article,
         view,
-        target
+        target,
     } = props;
 
     const types = (
@@ -74,7 +74,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         />
                     )}
                     <div className={cls.footer}>
-                        <AppLink 
+                        <AppLink
                             target={target}
                             to={RoutePath.article_details + article.id}
                         >
@@ -91,7 +91,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         );
     }
     return (
-        <AppLink 
+        <AppLink
             target={target}
             to={RoutePath.article_details + article.id}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}

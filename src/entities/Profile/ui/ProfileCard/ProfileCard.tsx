@@ -1,16 +1,9 @@
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
-
-import { useSelector } from 'react-redux';
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
-import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
-import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Select } from 'shared/ui/Select/Select';
 import { Currency } from 'entities/Currency';
 import { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySelect';
 import { Country, CountrySelect } from 'entities/Country';

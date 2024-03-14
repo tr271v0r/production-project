@@ -2,25 +2,23 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { ArticleDetails, ArticleList } from 'entities/Article';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AddCommentForm } from 'features/addCommentForm';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
 import {
     addCommentForArticle,
 } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId.ts/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
-import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
+import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
-import { articleDetailsPageRecommendationsReducer, getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
+import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../../model/slices';
@@ -32,7 +30,7 @@ interface ArticleDetailsPageProps {
 
 // Инжектим редюсеры в момент монтирования компонента
 const reducers: ReducersList = {
-    articleDetailsPage: articleDetailsPageReducer
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
@@ -45,8 +43,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
-
-
 
     const dispatch = useAppDispatch();
 
@@ -80,11 +76,11 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     className={cls.commentTitle}
                     title={t('Рекомендуем')}
                 />
-                <ArticleList 
+                <ArticleList
                     articles={recommendations}
                     isLoading={recommendationsIsLoading}
                     className={cls.recommendations}
-                    target='_blank'
+                    target="_blank"
 
                 />
                 <Text

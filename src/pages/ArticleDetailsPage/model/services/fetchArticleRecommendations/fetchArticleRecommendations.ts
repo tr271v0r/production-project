@@ -5,12 +5,10 @@ import { Article } from 'entities/Article';
 export const fetchArticleRecommendations = createAsyncThunk<Article[], void, ThunkConfig<string>>(
     'articleDetailsPage/fetchArticleRecommendations',
     async (_, { extra, rejectWithValue }) => {
-
         try {
-           
             const response = await extra.api.get<Article[]>('/articles', {
                 params: {
-                    _limit: 4
+                    _limit: 4,
                 },
             });
 

@@ -5,11 +5,13 @@ import {
     createSlice,
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Article, ArticleSortField, ArticleType, ArticleView } from 'entities/Article';
+import {
+    Article, ArticleSortField, ArticleType, ArticleView,
+} from 'entities/Article';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
+import { SortOrder } from 'shared/types';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
-import { SortOrder } from 'shared/types';
 
 const articlesAdapter = createEntityAdapter<Article>({
     // Поле по которому будет идти нормализация данных
@@ -37,7 +39,7 @@ const articlesPageSlice = createSlice({
         sort: ArticleSortField.CREATED,
         order: 'asc',
         search: '',
-        type: ArticleType.ALL
+        type: ArticleType.ALL,
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
@@ -48,7 +50,7 @@ const articlesPageSlice = createSlice({
             state.page = action.payload;
         },
         setSort: (state, action: PayloadAction<ArticleSortField>) => {
-            state.sort= action.payload;
+            state.sort = action.payload;
         },
         setOrder: (state, action: PayloadAction<SortOrder>) => {
             state.order = action.payload;
@@ -72,7 +74,7 @@ const articlesPageSlice = createSlice({
                 state.error = undefined;
                 state.isLoading = true;
 
-                if(action.meta.arg.replace) {
+                if (action.meta.arg.replace) {
                     articlesAdapter.removeAll(state);
                 }
             })
@@ -80,7 +82,7 @@ const articlesPageSlice = createSlice({
                 state.isLoading = false;
                 state.hasMore = action.payload.length >= state.limit;
 
-                if(action.meta.arg.replace) {
+                if (action.meta.arg.replace) {
                     articlesAdapter.setAll(state, action.payload);
                 } else {
                     articlesAdapter.addMany(state, action.payload);

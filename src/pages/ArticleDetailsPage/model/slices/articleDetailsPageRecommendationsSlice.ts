@@ -6,9 +6,9 @@ import {
 } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment';
+import { Article } from 'entities/Article';
 import { ArticleDetailsRecommendationsSchema } from '../types/ArticleDetailsRecommendationsSchema';
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId.ts/fetchCommentsByArticleId';
-import { Article } from 'entities/Article';
 import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
@@ -47,6 +47,6 @@ const articleDetailPageRecommendationsSlice = createSlice({
     },
 });
 
-export const { 
-    reducer: articleDetailsPageRecommendationsReducer 
+export const {
+    reducer: articleDetailsPageRecommendationsReducer,
 } = articleDetailPageRecommendationsSlice;

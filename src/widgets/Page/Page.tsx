@@ -1,7 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { MutableRefObject, memo, useRef, UIEvent } from 'react';
+import {
+    MutableRefObject, memo, useRef, UIEvent,
+} from 'react';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
-import cls from './Page.module.scss';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUIScrollByPath, uiActions } from 'features/UI';
 import { useLocation } from 'react-router-dom';
@@ -9,6 +10,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useSelector } from 'react-redux';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
+import cls from './Page.module.scss';
 
 interface PageProps {
     className?: string;
@@ -23,7 +25,7 @@ export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
 
-    const {pathname} = useLocation();
+    const { pathname } = useLocation();
 
     const scrollPosition = useSelector((state: StateSchema) => getUIScrollByPath(state, pathname));
 
@@ -36,23 +38,23 @@ export const Page = memo(({ className, children, onScrollEnd }: PageProps) => {
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
         dispatch(uiActions.setScrollPosition({
             position: e.currentTarget.scrollTop,
-            path: pathname
+            path: pathname,
         }));
     }, 500);
 
     useInitialEffect(() => {
         wrapperRef.current.scrollTop = scrollPosition;
-    })
+    });
 
     return (
-        <section 
-            ref={wrapperRef} 
+        <section
+            ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
             onScroll={onScroll}
             id={PAGE_ID}
         >
             {children}
-            {onScrollEnd ? <div className={cls.trigger}ref={triggerRef} /> : null}
+            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
         </section>
     );
 });

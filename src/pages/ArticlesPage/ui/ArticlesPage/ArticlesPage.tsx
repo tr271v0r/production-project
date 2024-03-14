@@ -6,6 +6,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Page } from 'widgets/Page/Page';
+import { useSearchParams } from 'react-router-dom';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {
     getArticlesPageError,
@@ -17,7 +18,6 @@ import { articlesPageActions, articlesPageReducer, getArticles } from '../../mod
 import cls from './ArticlesPage.module.scss';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
-import { useSearchParams } from 'react-router-dom';
 
 interface ArticlesPageProps {
     className?: string;
