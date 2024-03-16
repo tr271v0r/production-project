@@ -90,3 +90,19 @@ export const SizeL: Story = {
         size: TextSize.L,
     },
 };
+
+export const SizeS: Story = {
+    args: {
+        title: 'Text Text Text Text Text Text Text',
+        text: 'Text Text Text Text Text Text Text',
+        size: TextSize.S,
+    },
+};
+
+export const SizeM: Story = {
+    args: {
+        title: 'Text Text Text Text Text Text Text',
+        text: 'Text Text Text Text Text Text Text',
+        size: TextSize.M,
+    },
+};
