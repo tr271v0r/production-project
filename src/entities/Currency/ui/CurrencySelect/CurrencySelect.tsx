@@ -37,7 +37,7 @@ export const CurrencySelect = memo(({
             label={t('Укажите валюту')}
             defaultValue={t('Укажите валюту')}
             readonly={readonly}
-            direction='top'
+            direction='top right'
         />
     )
 });
