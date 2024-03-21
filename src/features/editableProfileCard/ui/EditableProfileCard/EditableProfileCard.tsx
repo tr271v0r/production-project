@@ -1,6 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import cls from './EditableProfileCard.module.scss';
 import { memo, useCallback } from 'react';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -101,7 +100,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             <VStack 
                 gap='8' 
                 max 
-                className={classNames(cls.EditableProfileCard, {}, [className])}
+                className={classNames('', {}, [className])}
             >
                 <EditableProfileCardHeader />
                 {validateErrors?.length && validateErrors.map((err) => (
