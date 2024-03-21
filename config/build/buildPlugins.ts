@@ -29,6 +29,7 @@ export function buildPlugins({
                 { from: paths.locales, to: paths.buildLocales },
             ],
         }),
+        
     ];
 
     if (isDev) {
