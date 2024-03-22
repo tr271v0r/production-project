@@ -7,7 +7,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import { getUserAuthData, isUserAdmin, isUserModerator, userActions } from 'entities/User';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './Navbar.module.scss';
@@ -36,6 +36,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
+    const isAdmin = useSelector(isUserAdmin);
+    const isModerator = useSelector(isUserModerator);
+
+    const isAdminPanelAvailable = isAdmin || isModerator;
+    
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
@@ -55,6 +60,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     className={cls.dropdown}
                     trigger= {<Avatar size={30} src={authData.avatar}/>}
                     items={[
+                        ...(isAdminPanelAvailable ? [{
+                            content: t('Админка'),
+                            href: RoutePath.admin_panel,
+                        }] : []),
                         {content: 'Профиль', href: RoutePath.profile + authData.id},
                         {content: 'Выйти', onClick: onLogout},
                     ]}

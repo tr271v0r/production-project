@@ -7,6 +7,12 @@ export {
 } from './model/selectors/getUserInited/getUserInited';
 
 export {
+    isUserAdmin,
+    isUserModerator,
+    getUserRoles
+} from './model/selectors/roleSelectors';
+
+export {
     userReducer,
     userActions,
 } from './model/slice/userSlice';
@@ -14,4 +20,6 @@ export {
 export {
     UserSchema,
     User,
+    UserRole
 } from './model/types/user';
+ 

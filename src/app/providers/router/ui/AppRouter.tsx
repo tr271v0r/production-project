@@ -8,6 +8,7 @@ import { AppRoutes, AppRoutesProps, routeConfig } from 'shared/config/routeConfi
 import { PageLoader } from 'widgets/PageLoader/PageLoader';
 import { RequireAuth } from './RequireAuth';
 
+
 const AppRouter = () => {
     // для того чтобы ссылка сохранялась и не приходилось делать одни и те же вычисления
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
@@ -18,11 +19,12 @@ const AppRouter = () => {
 
             </Suspense>
         );
+        
         return (
             <Route
                 key={route.path}
                 path={route.path}
-                element={route.authOnly ? <RequireAuth>{element}</RequireAuth> : element}
+                element={route.authOnly ? <RequireAuth roles={route.roles}>{element}</RequireAuth> : element}
             />
         );
     }, []);
