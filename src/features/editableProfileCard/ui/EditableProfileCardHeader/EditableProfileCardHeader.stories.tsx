@@ -1,22 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import MainPage from './MainPage';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
-const meta: Meta<typeof MainPage> = {
-    title: 'pages/MainPage',
-    component: MainPage,
+import { EditableProfileCardHeader } from './EditableProfileCardHeader';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+
+const meta: Meta<typeof EditableProfileCardHeader> = {
+    title: 'features/EditableProfileCardHeader',
+    component: EditableProfileCardHeader,
     parameters: {
         layout: 'fullscreen',
     },
     decorators: [
         (Story) => (
-            StoreDecorator({})(Story)
-        ),
-        (Story) => (
-            RouterDecorator()(Story)
+            StoreDecorator({
+                
+            })(Story)
         )
     ],
     tags: ['autodocs'],
@@ -26,9 +25,9 @@ const meta: Meta<typeof MainPage> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof MainPage>;
+type Story = StoryObj<typeof EditableProfileCardHeader>;
 
-export const Light: Story = {
+export const EditableProfileCardHeaderLight: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.LIGHT)(Story)
@@ -39,7 +38,7 @@ export const Light: Story = {
     },
 };
 
-export const Dark: Story = {
+export const EditableProfileCardHeaderDark: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.DARK)(Story)
@@ -50,7 +49,7 @@ export const Dark: Story = {
     },
 };
 
-export const Orange: Story = {
+export const EditableProfileCardHeaderOrange: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.ORANGE)(Story)

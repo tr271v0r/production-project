@@ -4,12 +4,14 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { Country } from '../../model/types/country';
 import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { DropdownDirection } from 'shared/types/ui';
 
 interface CountrySelectProps {
     className?: string;
     value?: Country;
     onChange?: (value: Country) => void;
     readonly?: boolean;
+    direction?: DropdownDirection;
 }
 
 const options = [
@@ -21,7 +23,7 @@ const options = [
 ];
 
 export const CountrySelect = memo(({
-    className, value, onChange, readonly,
+    className, value, onChange, readonly, direction='top right'
 }: CountrySelectProps) => {
     const { t } = useTranslation('profile');
 
@@ -38,7 +40,7 @@ export const CountrySelect = memo(({
             label={t('Страна')}
             defaultValue={t('Страна')}
             readonly={readonly}
-            direction='top right'
+            direction={direction}
         />
     )
 });

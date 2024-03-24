@@ -3,14 +3,27 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 
 import ArticleEditPage from './ArticleEditPage';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const meta: Meta<typeof ArticleEditPage> = {
     title: 'pages/ArticleEditPage',
     component: ArticleEditPage,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
-
+    decorators: [
+        (Story) => (
+            StoreDecorator({})(Story)
+        ),
+        (Story) => (
+            RouterDecorator()(Story)
+        ),
+        (Story) => (
+            // eslint-disable-next-line no-sequences
+            ThemeDecorator(Theme.LIGHT)(Story)
+        ),
+    ],
     tags: ['autodocs'],
     argTypes: {
 
@@ -20,21 +33,10 @@ const meta: Meta<typeof ArticleEditPage> = {
 export default meta;
 type Story = StoryObj<typeof ArticleEditPage>;
 
-export const ArticleEditPageLight: Story = {
+export const Normal: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
-    args: {
-
-    },
-};
-
-export const ArticleEditPageDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
         ),
     ],
     args: {

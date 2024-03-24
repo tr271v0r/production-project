@@ -7,7 +7,7 @@ const meta: Meta<typeof Loader> = {
     title: 'shared/Loader',
     component: Loader,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

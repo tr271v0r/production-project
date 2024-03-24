@@ -7,9 +7,13 @@ const meta: Meta<typeof Input> = {
     title: 'shared/Input',
     component: Input,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
-
+    decorators: [
+        (Story) => (
+            ThemeDecorator(Theme.LIGHT)(Story)
+        ),
+    ],
     tags: ['autodocs'],
     argTypes: {
 

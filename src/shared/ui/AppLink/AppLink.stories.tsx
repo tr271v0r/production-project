@@ -2,14 +2,24 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { AppLink, AppLinkTheme } from './AppLink';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const meta: Meta<typeof AppLink> = {
     title: 'shared/AppLink',
     component: AppLink,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
-
+    decorators: [
+        (Story) => (
+            // eslint-disable-next-line no-sequences
+            StoreDecorator({})(Story)
+        ),
+        (Story) => (
+            RouterDecorator()(Story)
+        )
+    ],
     tags: ['autodocs'],
     argTypes: {
 

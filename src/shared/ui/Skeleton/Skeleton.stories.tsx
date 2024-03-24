@@ -7,7 +7,7 @@ const meta: Meta<typeof Skeleton> = {
     title: 'shared/Skeleton',
     component: Skeleton,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

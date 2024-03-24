@@ -9,7 +9,7 @@ const meta: Meta<typeof ArticleDetails> = {
     title: 'entities/ArticleDetails',
     component: ArticleDetails,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

@@ -12,7 +12,7 @@ const meta: Meta<typeof Flex> = {
         ),
     ],
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

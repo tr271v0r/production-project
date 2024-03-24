@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
@@ -14,11 +13,11 @@ const meta: Meta<typeof ProfileCard> = {
     decorators: [
         (Story) => (
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.DARK)(Story)
+            ThemeDecorator(Theme.LIGHT)(Story)
         ),
     ],
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

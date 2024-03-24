@@ -7,7 +7,7 @@ const meta: Meta<typeof Text> = {
     title: 'shared/Text',
     component: Text,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

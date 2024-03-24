@@ -3,14 +3,24 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 
 import AdminPanelPage from './AdminPanelPage';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const meta: Meta<typeof AdminPanelPage> = {
-    title: '[EDIT]/AdminPanelPage',
+    title: 'pages/AdminPanelPage',
     component: AdminPanelPage,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
-
+    decorators: [
+        (Story) => (
+            // eslint-disable-next-line no-sequences
+            StoreDecorator({})(Story)
+        ),
+        (Story) => (
+            RouterDecorator()(Story)
+        )
+    ],
     tags: ['autodocs'],
     argTypes: {
 

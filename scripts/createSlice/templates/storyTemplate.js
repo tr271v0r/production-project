@@ -8,7 +8,7 @@ const meta: Meta<typeof ${componentName}> = {
     title: '${layer}/${componentName}',
     component: ${componentName},
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

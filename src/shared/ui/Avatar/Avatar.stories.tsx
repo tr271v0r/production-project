@@ -8,7 +8,7 @@ const meta: Meta<typeof Avatar> = {
     title: 'shared/Avatar',
     component: Avatar,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

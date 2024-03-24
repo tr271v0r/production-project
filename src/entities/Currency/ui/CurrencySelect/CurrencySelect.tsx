@@ -1,16 +1,15 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Select } from 'shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback } from 'react';
 import { Currency } from '../../model/types/currency';
-import cls from './CurrencySelect.module.scss';
 import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { DropdownDirection } from 'shared/types/ui';
 
 interface CurrencySelectProps {
     className?: string;
     value?: Currency;
     onChange?: (value: Currency) => void;
     readonly?: boolean;
+    direction?: DropdownDirection;
 }
 
 const options = [
@@ -20,7 +19,7 @@ const options = [
 ];
 
 export const CurrencySelect = memo(({
-    className, value, onChange, readonly,
+    className, value, onChange, readonly, direction='top right'
 }: CurrencySelectProps) => {
     const { t } = useTranslation('profile');
 
@@ -37,7 +36,7 @@ export const CurrencySelect = memo(({
             label={t('Укажите валюту')}
             defaultValue={t('Укажите валюту')}
             readonly={readonly}
-            direction='top right'
+            direction={direction}
         />
     )
 });

@@ -13,7 +13,7 @@ const meta: Meta<typeof Select> = {
         ),
     ],
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

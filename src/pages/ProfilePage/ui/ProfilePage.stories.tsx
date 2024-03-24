@@ -7,14 +7,37 @@ import { Currency } from 'entities/Currency';
 
 import AvatarImg from 'shared/assets/tests/storybook.jpg';
 import ProfilePage from './ProfilePage';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const meta: Meta<typeof ProfilePage> = {
     title: 'pages/ProfilePage',
     component: ProfilePage,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
-
+    
+    decorators: [
+        (Story) => (
+            // eslint-disable-next-line no-sequences
+            StoreDecorator({
+                profile: {
+                    form: {
+                        username: 'admin',
+                        age: 22,
+                        city: 'asf',
+                        country: Country.Belarus,
+                        currency: Currency.USD,
+                        first: 'asd',
+                        lastname: 'kjhgf',
+                        avatar: AvatarImg,
+                    },
+                },
+            })(Story)
+        ),
+        (Story) => (
+            RouterDecorator()(Story)
+        )
+    ],
     tags: ['autodocs'],
     argTypes: {
 
@@ -29,24 +52,6 @@ export const Light: Story = {
         (Story) => (
             ThemeDecorator(Theme.LIGHT)(Story)
         ),
-        (Story) => (
-            // eslint-disable-next-line no-sequences
-
-            StoreDecorator({
-                profile: {
-                    form: {
-                        username: 'admin',
-                        age: 22,
-                        city: 'asf',
-                        country: Country.Belarus,
-                        currency: Currency.USD,
-                        first: 'asd',
-                        lastname: 'kjhgf',
-                        avatar: AvatarImg,
-                    },
-                },
-            })(Story)
-        ),
     ],
     args: {
 
@@ -58,22 +63,17 @@ export const Dark: Story = {
         (Story) => (
             ThemeDecorator(Theme.DARK)(Story)
         ),
+    ],
+    args: {
+
+    },
+};
+
+
+export const Orange: Story = {
+    decorators: [
         (Story) => (
-            // eslint-disable-next-line no-sequences
-            StoreDecorator({
-                profile: {
-                    form: {
-                        username: 'admin',
-                        age: 22,
-                        city: 'asf',
-                        country: Country.Belarus,
-                        currency: Currency.USD,
-                        first: 'asd',
-                        lastname: 'kjhgf',
-                        avatar: AvatarImg,
-                    },
-                },
-            })(Story)
+            ThemeDecorator(Theme.ORANGE)(Story)
         ),
     ],
     args: {

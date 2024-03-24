@@ -3,6 +3,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const meta: Meta<typeof ArticleListItem> = {
     title: 'entities/ArticleListItem',
@@ -10,7 +11,14 @@ const meta: Meta<typeof ArticleListItem> = {
     parameters: {
         layout: 'centered',
     },
-
+    decorators: [
+        (Story) => (
+            RouterDecorator()(Story)
+        ),
+        (Story) => (
+            ThemeDecorator(Theme.LIGHT)(Story)
+        ),
+    ],
     tags: ['autodocs'],
     argTypes: {
 
@@ -100,72 +108,14 @@ const article = {
     ],
 } as Article;
 
-export const ArticleListItemBIGLight: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
+export const ArticleListItemBig: Story = {
     args: {
         view: ArticleView.BIG,
         article,
     },
 };
 
-export const ArticleListItemSMALLLight: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
-    args: {
-        view: ArticleView.SMALL,
-        article,
-    },
-};
-
-export const ArticleListItemBIGDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
-    args: {
-        view: ArticleView.BIG,
-        article,
-    },
-};
-
-export const ArticleListItemSMALLDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
-    args: {
-        view: ArticleView.SMALL,
-        article,
-    },
-};
-
-export const ArticleListItemBIGOrange: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.ORANGE)(Story)
-        ),
-    ],
-    args: {
-        view: ArticleView.BIG,
-        article,
-    },
-};
-
-export const ArticleListItemSMALLOrange: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.ORANGE)(Story)
-        ),
-    ],
+export const ArticleListItemSmall: Story = {
     args: {
         view: ArticleView.SMALL,
         article,

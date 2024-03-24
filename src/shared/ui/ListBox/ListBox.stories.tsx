@@ -15,7 +15,7 @@ const meta: Meta<typeof ListBox> = {
         ),
     ],
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

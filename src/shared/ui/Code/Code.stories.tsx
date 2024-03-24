@@ -7,7 +7,7 @@ const meta: Meta<typeof Code> = {
     title: 'shared/Code',
     component: Code,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

@@ -4,14 +4,17 @@ import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '../../src/app/providers/ThemeProvider/index';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
+import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 
 const preview: Preview = {
     decorators: [
         (Story) => (
             // eslint-disable-next-line no-sequences
             ThemeDecorator(Theme.LIGHT)(Story),
-            RouterDecorator()(Story)
+            RouterDecorator()(Story),
+            SuspenseDecorator()(Story)
         ),
+        
     ],
     parameters: {
         decorators: [
@@ -31,8 +34,3 @@ const preview: Preview = {
 };
 
 export default preview;
-// decorators: [
-//     (Story) => (
-//         RouterDecorator(Story)
-//     ),
-// ],

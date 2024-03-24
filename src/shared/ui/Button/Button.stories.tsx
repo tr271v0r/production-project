@@ -7,7 +7,7 @@ const meta: Meta<typeof Button> = {
     title: 'shared/Button',
     component: Button,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

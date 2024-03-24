@@ -5,6 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import ArticleDetailsPage from './ArticleDetailsPage';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const article: Article = {
     id: '1',
@@ -85,21 +86,21 @@ const meta: Meta<typeof ArticleDetailsPage> = {
     component: ArticleDetailsPage,
     decorators: [
         (Story) => (
+            StoreDecorator({})(Story)
+        ),
+        (Story) => (
+            RouterDecorator()(Story)
+        ),
+        (Story) => (
             // eslint-disable-next-line no-sequences
-            StoreDecorator({
-                articleDetails: {
-                    data: article,
-                    isLoading: true,
-
-                },
-            })(Story)
+            ThemeDecorator(Theme.LIGHT)(Story)
         ),
     ],
     args: {
 
     },
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],
@@ -111,11 +112,17 @@ const meta: Meta<typeof ArticleDetailsPage> = {
 export default meta;
 type Story = StoryObj<typeof ArticleDetailsPage>;
 
-export const ArticleDetailsPageLight: Story = {
+export const IsLoading: Story = {
     decorators: [
         (Story) => (
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.LIGHT)(Story)
+            StoreDecorator({
+                articleDetails: {
+                    data: {},
+                    isLoading: true,
+
+                },
+            })(Story)
         ),
     ],
     args: {
@@ -123,11 +130,16 @@ export const ArticleDetailsPageLight: Story = {
     },
 };
 
-export const ArticleDetailsPageDark: Story = {
+export const Normal: Story = {
     decorators: [
         (Story) => (
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.DARK)(Story)
+            StoreDecorator({
+                articleDetails: {
+                    data: article,
+                    isLoading: false,
+                },
+            })(Story)
         ),
     ],
     args: {
@@ -135,11 +147,17 @@ export const ArticleDetailsPageDark: Story = {
     },
 };
 
-export const ArticleDetailsPageOrange: Story = {
+export const WithError: Story = {
     decorators: [
         (Story) => (
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.ORANGE)(Story)
+            StoreDecorator({
+                articleDetails: {
+                    data: {},
+                    isLoading: false,
+                    error: 'Some error'
+                },
+            })(Story)
         ),
     ],
     args: {

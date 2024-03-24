@@ -16,7 +16,7 @@ const meta: Meta<typeof Dropdown> = {
         ),
     ],
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],

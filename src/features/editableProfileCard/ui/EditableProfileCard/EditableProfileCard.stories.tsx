@@ -4,17 +4,31 @@ import { Theme } from 'app/providers/ThemeProvider';
 
 import { EditableProfileCard } from './EditableProfileCard';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
+import AvatarImg from 'shared/assets/tests/storybook.jpg';
 
 const meta: Meta<typeof EditableProfileCard> = {
     title: 'features/EditableProfileCard',
     component: EditableProfileCard,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
     decorators: [
         (Story) => (
             StoreDecorator({
-                
+                profile: {
+                    form: {
+                        username: 'admin',
+                        age: 22,
+                        city: 'asf',
+                        country: Country.Belarus,
+                        currency: Currency.USD,
+                        first: 'asd',
+                        lastname: 'kjhgf',
+                        avatar: AvatarImg,
+                    },
+                }
             })(Story)
         )
     ],

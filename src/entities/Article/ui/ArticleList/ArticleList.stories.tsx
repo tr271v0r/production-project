@@ -3,6 +3,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleList } from './ArticleList';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const meta: Meta<typeof ArticleList> = {
     title: 'entities/ArticleList',
@@ -11,9 +12,12 @@ const meta: Meta<typeof ArticleList> = {
         (Story) => (
             ThemeDecorator(Theme.LIGHT)(Story)
         ),
+        (Story) => (
+            RouterDecorator()(Story)
+        ),
     ],
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],
@@ -131,6 +135,7 @@ export const ListSmall: Story = {
             })),
         isLoading: false,
         view: ArticleView.SMALL,
+        virtualized: false
     },
 };
 
@@ -144,5 +149,6 @@ export const ListBig: Story = {
             })),
         isLoading: false,
         view: ArticleView.BIG,
+        virtualized: false
     },
 };
