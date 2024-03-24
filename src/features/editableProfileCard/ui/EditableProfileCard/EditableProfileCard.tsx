@@ -16,11 +16,11 @@ import { fetchProfileData } from '../../model/services/fetchProfileData/fetchPro
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { validateProfileError } from '../../model/types/editableProfileCardSchema';
 import { ProfileCard } from 'entities/Profile';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { VStack } from 'shared/ui/Stack';
+import { validateProfileError } from '../../model/consts/consts';
 
 interface EditableProfileCardProps {
     className?: string;

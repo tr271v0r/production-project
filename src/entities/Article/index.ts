@@ -7,8 +7,10 @@ export {
 } from './ui/ArticleDetails/ArticleDetails';
 
 export {
-    Article, ArticleView, ArticleSortField, ArticleType,
-} from './model/types/article';
+     ArticleView, ArticleSortField, ArticleType, ArticleBlockType
+} from './model/consts/consts'
+
+export type { Article } from './model/types/article';
 
 export type {
     ArticleDetailsSchema,

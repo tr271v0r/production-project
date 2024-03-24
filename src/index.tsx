@@ -11,7 +11,7 @@ import 'app/styles/index.scss';
 
 
 
-const container = document.getElementById('app');
+const container = document.getElementById('root');
 
 if(!container) {
     throw new Error('The container root does not exist!');

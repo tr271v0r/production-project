@@ -3,7 +3,7 @@ import { StateSchema } from 'app/providers/StoreProvider';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { validateProfileData } from './validateProfileData';
-import { validateProfileError } from '../../types/editableProfileCardSchema';
+import { validateProfileError } from '../../consts/consts';
 
 const data = {
     username: 'admin',

@@ -1,7 +1,7 @@
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { Article, ArticleBlockType, ArticleType } from '../types/article';
-import { articleDetailsActions, articleDetailsReducer } from './articleDetailsSlice';
+
+import { ArticleBlockType, ArticleType } from '../consts/consts';
+import { Article  } from '../types/article';
+import {  articleDetailsReducer } from './articleDetailsSlice';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 
