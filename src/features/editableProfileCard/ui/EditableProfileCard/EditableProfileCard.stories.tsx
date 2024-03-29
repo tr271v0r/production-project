@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 
 import { EditableProfileCard } from './EditableProfileCard';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import AvatarImg from 'shared/assets/tests/storybook.jpg';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import AvatarImg from '@/shared/assets/tests/storybook.jpg';
 
 const meta: Meta<typeof EditableProfileCard> = {
     title: 'features/EditableProfileCard',
@@ -28,9 +28,9 @@ const meta: Meta<typeof EditableProfileCard> = {
                         lastname: 'kjhgf',
                         avatar: AvatarImg,
                     },
-                }
+                },
             })(Story)
-        )
+        ),
     ],
     tags: ['autodocs'],
     argTypes: {
@@ -45,7 +45,7 @@ export const EditableProfileCardLight: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.LIGHT)(Story)
-        )
+        ),
     ],
     args: {
 
@@ -56,7 +56,7 @@ export const EditableProfileCardDark: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.DARK)(Story)
-        )
+        ),
     ],
     args: {
 
@@ -67,7 +67,7 @@ export const EditableProfileCardOrange: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.ORANGE)(Story)
-        )
+        ),
     ],
     args: {
 

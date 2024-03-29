@@ -11,8 +11,8 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         use: ['@svgr/webpack'],
     };
 
-    const codeBabelLoader = buildBabelLoader({...options, isTsx: false});
-    const tsxBabelLoader = buildBabelLoader({...options, isTsx: true});
+    const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+    const tsxBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
     const cssLoaders = buildCssLoaders(isDev);
 
@@ -38,7 +38,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
         codeBabelLoader,
         tsxBabelLoader,
-        
+
         // babelLoader,
         // typescriptLoader,
         cssLoaders,

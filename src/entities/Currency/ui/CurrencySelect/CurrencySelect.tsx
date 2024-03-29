@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { Currency } from '../../model/types/currency';
-import { ListBox } from 'shared/ui/Popups/components/ListBox/ListBox';
-import { DropdownDirection } from 'shared/types/ui';
+import { ListBox } from '@/shared/ui/Popups/components/ListBox/ListBox';
+import { DropdownDirection } from '@/shared/types/ui';
 
 interface CurrencySelectProps {
     className?: string;
@@ -19,7 +19,7 @@ const options = [
 ];
 
 export const CurrencySelect = memo(({
-    className, value, onChange, readonly, direction='top right'
+    className, value, onChange, readonly, direction = 'top right',
 }: CurrencySelectProps) => {
     const { t } = useTranslation('profile');
 
@@ -28,7 +28,7 @@ export const CurrencySelect = memo(({
     }, [onChange]);
 
     return (
-        <ListBox 
+        <ListBox
             className={className}
             onChange={onChangeHandler}
             value={value}
@@ -38,5 +38,5 @@ export const CurrencySelect = memo(({
             readonly={readonly}
             direction={direction}
         />
-    )
+    );
 });

@@ -14,7 +14,7 @@ const preview: Preview = {
             RouterDecorator()(Story),
             SuspenseDecorator()(Story)
         ),
-        
+
     ],
     parameters: {
         decorators: [

@@ -1,14 +1,14 @@
 import { ReducersMapObject, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import { counterReducer } from 'entities/Counter';
-import { userReducer } from 'entities/User';
-import { $api } from 'shared/api/api';
 import { NavigateOptions } from 'react-router-dom';
 import { To } from 'history';
 import { CombinedState, Reducer } from 'redux';
-import { uiReducer } from 'features/UI';
+import { counterReducer } from '@/entities/Counter';
+import { userReducer } from '@/entities/User';
+import { $api } from '@/shared/api/api';
+import { uiReducer } from '@/features/UI';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
-import { rtkApi } from 'shared/api/rtkApi';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -20,7 +20,7 @@ export function createReduxStore(
         counter: counterReducer,
         user: userReducer,
         ui: uiReducer,
-        [rtkApi.reducerPath]: rtkApi.reducer
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
@@ -37,7 +37,7 @@ export function createReduxStore(
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({
             thunk: {
                 extraArgument: extraArg,
-            },  
+            },
         }).concat(rtkApi.middleware),
     });
     // @ts-ignore

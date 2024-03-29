@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import AboutPage from './AboutPage';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const meta: Meta<typeof AboutPage> = {
     title: 'pages/AboutPage',
@@ -17,7 +17,7 @@ const meta: Meta<typeof AboutPage> = {
         ),
         (Story) => (
             RouterDecorator()(Story)
-        )
+        ),
     ],
     tags: ['autodocs'],
     argTypes: {

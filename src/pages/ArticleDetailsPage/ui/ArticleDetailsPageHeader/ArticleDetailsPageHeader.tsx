@@ -1,14 +1,14 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
-import { getArticleDetailsData } from 'entities/Article';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { getUserAuthData } from '@/entities/User';
+import { getArticleDetailsData } from '@/entities/Article';
 import { getCanEditArticle } from '../../model/selectors/article';
-import { HStack } from 'shared/ui/Stack';
+import { HStack } from '@/shared/ui/Stack';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
@@ -29,10 +29,10 @@ export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageH
     }, [article?.id, navigate]);
 
     return (
-        <HStack 
+        <HStack
             className={classNames('', {}, [className])}
             max
-            justify='between'
+            justify="between"
         >
             <Button
                 theme={ButtonTheme.OUTLINE}

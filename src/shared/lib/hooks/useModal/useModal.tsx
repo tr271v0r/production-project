@@ -1,4 +1,6 @@
-import { MutableRefObject, useCallback, useEffect, useRef, useState } from "react";
+import {
+    MutableRefObject, useCallback, useEffect, useRef, useState,
+} from 'react';
 
 interface UseModalProps{
     isOpen?: boolean;
@@ -6,8 +8,7 @@ interface UseModalProps{
     animationDelay: number;
 }
 
-export function useModal({animationDelay, isOpen, onClose}: UseModalProps) {
-
+export function useModal({ animationDelay, isOpen, onClose }: UseModalProps) {
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const [isMounted, setIsMounted] = useState<boolean>(false);
     const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
@@ -49,6 +50,6 @@ export function useModal({animationDelay, isOpen, onClose}: UseModalProps) {
     return {
         isClosing,
         isMounted,
-        close
-    }
+        close,
+    };
 }

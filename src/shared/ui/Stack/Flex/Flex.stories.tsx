@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { Flex } from './Flex';
 
 const meta: Meta<typeof Flex> = {
@@ -34,7 +34,7 @@ export const Row: Story = {
                 <div>third</div>
                 <div>fourth</div>
             </div>
-        )
+        ),
     },
 };
 
@@ -48,7 +48,7 @@ export const Column: Story = {
                 <div>third</div>
                 <div>fourth</div>
             </>
-        )
+        ),
     },
 };
 
@@ -63,7 +63,7 @@ export const RowGap4: Story = {
                 <div>third</div>
                 <div>fourth</div>
             </div>
-        )
+        ),
     },
 };
 
@@ -78,7 +78,7 @@ export const RowGap8: Story = {
                 <div>third</div>
                 <div>fourth</div>
             </div>
-        )
+        ),
     },
 };
 
@@ -87,13 +87,13 @@ export const RowGap16: Story = {
         direction: 'row',
         gap: '16',
         children: (
-            <div style={{minWidth: '200px'}}>
+            <div style={{ minWidth: '200px' }}>
                 <div>first</div>
                 <div>second</div>
                 <div>third</div>
                 <div>fourth</div>
             </div>
-        )
+        ),
     },
 };
 
@@ -108,7 +108,7 @@ export const RowGap32: Story = {
                 <div>third</div>
                 <div>fourth</div>
             </div>
-        )
+        ),
     },
 };
 
@@ -123,7 +123,7 @@ export const ColumnGap4: Story = {
                 <div>third</div>
                 <div>fourth</div>
             </>
-        )
+        ),
     },
 };
 
@@ -138,7 +138,7 @@ export const ColumnGap8: Story = {
                 <div>third</div>
                 <div>fourth</div>
             </>
-        )
+        ),
     },
 };
 
@@ -153,7 +153,7 @@ export const ColumnGap16: Story = {
                 <div>third</div>
                 <div>fourth</div>
             </>
-        )
+        ),
     },
 };
 
@@ -168,6 +168,6 @@ export const ColumnGap32: Story = {
                 <div>third</div>
                 <div>fourth</div>
             </>
-        )
+        ),
     },
 };

@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
-import AvatarImg from 'shared/assets/tests/storybook.jpg';
+import AvatarImg from '@/shared/assets/tests/storybook.jpg';
 import ProfilePage from './ProfilePage';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const meta: Meta<typeof ProfilePage> = {
     title: 'pages/ProfilePage',
@@ -15,7 +15,7 @@ const meta: Meta<typeof ProfilePage> = {
     parameters: {
         layout: 'fullscreen',
     },
-    
+
     decorators: [
         (Story) => (
             // eslint-disable-next-line no-sequences
@@ -36,7 +36,7 @@ const meta: Meta<typeof ProfilePage> = {
         ),
         (Story) => (
             RouterDecorator()(Story)
-        )
+        ),
     ],
     tags: ['autodocs'],
     argTypes: {
@@ -68,7 +68,6 @@ export const Dark: Story = {
 
     },
 };
-
 
 export const Orange: Story = {
     decorators: [

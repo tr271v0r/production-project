@@ -1,5 +1,5 @@
-import { Article } from "entities/Article";
-import { rtkApi } from "shared/api/rtkApi";
+import { Article } from '@/entities/Article';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 const recommendationsApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({
@@ -8,8 +8,8 @@ const recommendationsApi = rtkApi.injectEndpoints({
             query: (limit) => ({
                 url: '/articles',
                 params: {
-                    _limit: limit
-                }
+                    _limit: limit,
+                },
             }),
         }),
         // для создания, изменения, удаления, обновления данных: .mutation
@@ -24,7 +24,7 @@ const recommendationsApi = rtkApi.injectEndpoints({
         // }),
     }),
     overrideExisting: false,
-})
+});
 
 export const useArticleRecommendationsList = recommendationsApi.useGetArticleRecommendationsListQuery;
-//export const useCreateArticleRecommendation = recommendationsApi.useCreateArticleRecommendationMutation;
+// export const useCreateArticleRecommendation = recommendationsApi.useCreateArticleRecommendationMutation;

@@ -1,15 +1,14 @@
-import { UserRole } from 'entities/User';
-import { AboutPage } from 'pages/AboutPage';
-import { AdminPanelPage } from 'pages/AdminPanelPage';
-import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
-import { ArticleEditPage } from 'pages/ArticleEditPage';
-import { ArticlesPage } from 'pages/ArticlesPage';
-import { ForbiddenPage } from 'pages/ForbiddenPage';
-import { MainPage } from 'pages/MainPage';
-import { NotFoundPage } from 'pages/NotFoundPage';
-import { ProfilePage } from 'pages/ProfilePage';
-
 import { RouteProps } from 'react-router-dom';
+import { UserRole } from '@/entities/User';
+import { AboutPage } from '@/pages/AboutPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { ArticlesPage } from '@/pages/ArticlesPage';
+import { ForbiddenPage } from '@/pages/ForbiddenPage';
+import { MainPage } from '@/pages/MainPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
+import { ProfilePage } from '@/pages/ProfilePage';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
@@ -81,7 +80,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         path: `${RoutePath.admin_panel}`,
         element: <AdminPanelPage />,
         authOnly: true,
-        roles: [UserRole.ADMIN, UserRole.MODERATOR]
+        roles: [UserRole.ADMIN, UserRole.MODERATOR],
     },
     [AppRoutes.FORBIDDEN]: {
         path: `${RoutePath.forbidden}`,

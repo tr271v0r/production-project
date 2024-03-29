@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import LoginForm from './LoginForm';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 
 const meta: Meta<typeof LoginForm> = {
     title: 'features/LoginForm',
@@ -13,7 +13,7 @@ const meta: Meta<typeof LoginForm> = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.LIGHT)(Story)
-        )
+        ),
     ],
     tags: ['autodocs'],
     argTypes: {

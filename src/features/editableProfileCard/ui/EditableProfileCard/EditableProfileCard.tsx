@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
@@ -11,15 +11,15 @@ import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/g
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
-import { ProfileCard } from 'entities/Profile';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
+import { ProfileCard } from '@/entities/Profile';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { VStack } from 'shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 import { validateProfileError } from '../../model/consts/consts';
 
 interface EditableProfileCardProps {
@@ -34,7 +34,7 @@ const reducers: ReducersList = {
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const { className, id } = props;
     const { t } = useTranslation('profile');
-    
+
     const dispatch = useAppDispatch();
 
     const formData = useSelector(getProfileForm);
@@ -51,8 +51,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         [validateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
         [validateProfileError.NO_DATA]: t('Данные не указаны'),
     };
-
-    
 
     useInitialEffect(() => {
         dispatch(fetchProfileData(id));
@@ -95,9 +93,9 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             reducers={reducers}
             removeAfterUnmount
         >
-            <VStack 
-                gap='8' 
-                max 
+            <VStack
+                gap="8"
+                max
                 className={classNames('', {}, [className])}
             >
                 <EditableProfileCardHeader />
@@ -106,7 +104,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                         key={err}
                         theme={TextTheme.ERROR}
                         text={validateErrorTranslates[err]}
-                        data-testid={'EditableProfileCard.Error'}
+                        data-testid="EditableProfileCard.Error"
                     />
                 ))}
                 <ProfileCard

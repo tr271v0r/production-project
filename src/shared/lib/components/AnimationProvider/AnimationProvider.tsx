@@ -8,7 +8,7 @@ type GestureType = typeof import('@use-gesture/react');
 interface AnimationContextPayload {
     Gesture?: GestureType;
     Spring?: SpringType;
-    //Подгрузка библиотек
+    // Подгрузка библиотек
     isLoaded?: boolean;
 }
 

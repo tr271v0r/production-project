@@ -1,6 +1,6 @@
 import { Dispatch } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { fetchArticleById } from './fetchArticleById';
 import { ArticleBlockType, ArticleType } from '../../consts/consts';
 import { Article } from '../../types/article';

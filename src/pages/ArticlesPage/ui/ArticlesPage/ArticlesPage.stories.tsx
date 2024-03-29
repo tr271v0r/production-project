@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticlesPage from './ArticlesPage';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
-import { Article } from 'entities/Article';
-
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
+import { Article } from '@/entities/Article';
 
 const article: Article = {
     id: '1',
@@ -34,7 +33,7 @@ const meta: Meta<typeof ArticlesPage> = {
         ),
         (Story) => (
             RouterDecorator()(Story)
-        )
+        ),
     ],
     parameters: {
         layout: 'fullscreen',

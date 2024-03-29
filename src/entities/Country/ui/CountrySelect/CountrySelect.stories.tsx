@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { CountrySelect } from './CountrySelect';
 
 const meta: Meta<typeof CountrySelect> = {
@@ -13,7 +13,7 @@ const meta: Meta<typeof CountrySelect> = {
         ),
         (Story) => (
             // eslint-disable-next-line no-sequences
-            <div style={{padding: 300}}><Story /></div>
+            <div style={{ padding: 300 }}><Story /></div>
         ),
     ],
     parameters: {
@@ -37,30 +37,30 @@ export const Normal: Story = {
 
 export const TopLeft: Story = {
     args: {
-        direction: 'top left'
+        direction: 'top left',
     },
 };
 
 export const TopRight: Story = {
     args: {
-        direction: 'top right'
+        direction: 'top right',
     },
 };
 
 export const BottomLeft: Story = {
     args: {
-        direction: 'bottom left'
+        direction: 'bottom left',
     },
 };
 
 export const BottomRight: Story = {
     args: {
-        direction: 'bottom right'
+        direction: 'bottom right',
     },
 };
 
 export const Readonly: Story = {
     args: {
-        readonly: true
+        readonly: true,
     },
 };

@@ -1,4 +1,4 @@
-import { NotificationList } from './ui/NotificationList/NotificationList'
+import { NotificationList } from './ui/NotificationList/NotificationList';
 
 export {
     NotificationList,

@@ -1,21 +1,22 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
 import { memo, useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getUserAuthData } from 'entities/User';
-import { HStack } from 'shared/ui/Stack/HStack/HStack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text/Text';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUserAuthData } from '@/entities/User';
+import { HStack } from '@/shared/ui/Stack/HStack/HStack';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { profileActions } from '../../model/slice/profileSlice';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+
 interface EditableProfileCardHeaderProps {
     className?: string;
-};
+}
 
-export const EditableProfileCardHeader = memo(({className}: EditableProfileCardHeaderProps) => {
+export const EditableProfileCardHeader = memo(({ className }: EditableProfileCardHeaderProps) => {
     const { t } = useTranslation('profile');
 
     const authData = useSelector(getUserAuthData);
@@ -38,9 +39,9 @@ export const EditableProfileCardHeader = memo(({className}: EditableProfileCardH
         dispatch(updateProfileData());
     }, [dispatch]);
     return (
-        <HStack 
+        <HStack
             className={classNames('', {}, [className])}
-            justify='between'
+            justify="between"
             max
         >
             <Text title={t('Профиль')} />
@@ -51,28 +52,28 @@ export const EditableProfileCardHeader = memo(({className}: EditableProfileCardH
                             <Button
                                 onClick={onEdit}
                                 theme={ButtonTheme.OUTLINE}
-                                data-testid={'EditableProfileCardHeader.EditButton'}
+                                data-testid="EditableProfileCardHeader.EditButton"
                             >
                                 {t('Редактировать')}
                             </Button>
                         )
                         : (
-                            <HStack gap='8'>
+                            <HStack gap="8">
                                 <Button
                                     onClick={onCancelEdit}
                                     theme={ButtonTheme.OUTLINE_RED}
-                                    data-testid={'EditableProfileCardHeader.CancelButton'}
+                                    data-testid="EditableProfileCardHeader.CancelButton"
                                 >
                                     {t('Отменить')}
                                 </Button>
                                 <Button
                                     onClick={onSave}
-                                    data-testid={'EditableProfileCardHeader.SaveButton'}
+                                    data-testid="EditableProfileCardHeader.SaveButton"
                                 >
                                     {t('Сохранить')}
                                 </Button>
                             </HStack>
-                    )}
+                        )}
                 </>
             )}
         </HStack>

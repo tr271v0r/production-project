@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article } from 'entities/Article';
-import { ArticleBlockType, ArticleType } from 'entities/Article';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Article, ArticleBlockType, ArticleType } from '@/entities/Article';
+
 import ArticleDetailsPage from './ArticleDetailsPage';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const article: Article = {
     id: '1',
@@ -156,7 +156,7 @@ export const WithError: Story = {
                 articleDetails: {
                     data: {},
                     isLoading: false,
-                    error: 'Some error'
+                    error: 'Some error',
                 },
             })(Story)
         ),

@@ -9,7 +9,7 @@ export {
 export {
     isUserAdmin,
     isUserModerator,
-    getUserRoles
+    getUserRoles,
 } from './model/selectors/roleSelectors';
 
 export {
@@ -18,9 +18,9 @@ export {
 } from './model/slice/userSlice';
 
 export {
-    UserRole
+    UserRole,
 } from './model/consts/consts';
- 
+
 export type {
     UserSchema,
     User,

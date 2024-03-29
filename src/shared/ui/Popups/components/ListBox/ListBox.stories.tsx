@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { ListBox } from './ListBox';
 
 const meta: Meta<typeof ListBox> = {
@@ -11,7 +11,7 @@ const meta: Meta<typeof ListBox> = {
             ThemeDecorator(Theme.LIGHT)(Story)
         ),
         (Story) => (
-            <div style={{padding: 300}}><Story /></div>
+            <div style={{ padding: 300 }}><Story /></div>
         ),
     ],
     parameters: {
@@ -31,12 +31,12 @@ export const Normal: Story = {
     args: {
         value: '123',
         items: [
-            {content: '1asdasdasd23', value: '1'},
-            {content: '1asdasdasd23', value: '2'},
-            {content: '1asdasdasd23', value: '3'},
-            {content: '1asdasdasd23', value: '4'},
-            {content: '1asdasdasd23', value: '5'},
-        ]
+            { content: '1asdasdasd23', value: '1' },
+            { content: '1asdasdasd23', value: '2' },
+            { content: '1asdasdasd23', value: '3' },
+            { content: '1asdasdasd23', value: '4' },
+            { content: '1asdasdasd23', value: '5' },
+        ],
     },
 };
 
@@ -45,12 +45,12 @@ export const topLeft: Story = {
         direction: 'top left',
         value: '123',
         items: [
-            {content: '1asdasdasd23', value: '1'},
-            {content: '1asdasdasd23', value: '2'},
-            {content: '1asdasdasd23', value: '3'},
-            {content: '1asdasdasd23', value: '4'},
-            {content: '1asdasdasd23', value: '5'},
-        ]
+            { content: '1asdasdasd23', value: '1' },
+            { content: '1asdasdasd23', value: '2' },
+            { content: '1asdasdasd23', value: '3' },
+            { content: '1asdasdasd23', value: '4' },
+            { content: '1asdasdasd23', value: '5' },
+        ],
     },
 };
 
@@ -59,12 +59,12 @@ export const topRight: Story = {
         direction: 'top right',
         value: '123',
         items: [
-            {content: '1asdasdasd23', value: '1'},
-            {content: '1asdasdasd23', value: '2'},
-            {content: '1asdasdasd23', value: '3'},
-            {content: '1asdasdasd23', value: '4'},
-            {content: '1asdasdasd23', value: '5'},
-        ]
+            { content: '1asdasdasd23', value: '1' },
+            { content: '1asdasdasd23', value: '2' },
+            { content: '1asdasdasd23', value: '3' },
+            { content: '1asdasdasd23', value: '4' },
+            { content: '1asdasdasd23', value: '5' },
+        ],
     },
 };
 
@@ -73,12 +73,12 @@ export const bottomLeft: Story = {
         direction: 'bottom left',
         value: '123',
         items: [
-            {content: '1asdasdasd23', value: '1'},
-            {content: '1asdasdasd23', value: '2'},
-            {content: '1asdasdasd23', value: '3'},
-            {content: '1asdasdasd23', value: '4'},
-            {content: '1asdasdasd23', value: '5'},
-        ]
+            { content: '1asdasdasd23', value: '1' },
+            { content: '1asdasdasd23', value: '2' },
+            { content: '1asdasdasd23', value: '3' },
+            { content: '1asdasdasd23', value: '4' },
+            { content: '1asdasdasd23', value: '5' },
+        ],
     },
 };
 
@@ -87,11 +87,11 @@ export const bottomRight: Story = {
         direction: 'bottom right',
         value: '123',
         items: [
-            {content: '1asdasdasd23', value: '1'},
-            {content: '1asdasdasd23', value: '2'},
-            {content: '1asdasdasd23', value: '3'},
-            {content: '1asdasdasd23', value: '4'},
-            {content: '1asdasdasd23', value: '5'},
-        ]
+            { content: '1asdasdasd23', value: '1' },
+            { content: '1asdasdasd23', value: '2' },
+            { content: '1asdasdasd23', value: '3' },
+            { content: '1asdasdasd23', value: '4' },
+            { content: '1asdasdasd23', value: '5' },
+        ],
     },
 };

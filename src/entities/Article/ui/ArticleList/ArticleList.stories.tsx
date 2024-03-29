@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { Article } from '../../model/types/article';
-import {  ArticleView } from '../../model/consts/consts';
+import { ArticleView } from '../../model/consts/consts';
 import { ArticleList } from './ArticleList';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const meta: Meta<typeof ArticleList> = {
     title: 'entities/ArticleList',
@@ -136,7 +136,6 @@ export const ListSmall: Story = {
             })),
         isLoading: false,
         view: ArticleView.SMALL,
-        virtualized: false
     },
 };
 
@@ -150,6 +149,5 @@ export const ListBig: Story = {
             })),
         isLoading: false,
         view: ArticleView.BIG,
-        virtualized: false
     },
 };

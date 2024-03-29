@@ -71,7 +71,8 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
-        'mega/path-checker': 'error'
+        'mega/path-checker': 'error',
+        'react/jsx-no-useless-fragment': 'warn'
     },
     globals: {
         __IS_DEV__: true,

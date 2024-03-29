@@ -1,13 +1,13 @@
 import '@testing-library/jest-dom';
-import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
-import { EditableProfileCard } from './EditableProfileCard';
-import { Profile } from 'entities/Profile';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
-import { profileReducer } from '../../model/slice/profileSlice';
 import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
-import { $api } from 'shared/api/api';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
+import { EditableProfileCard } from './EditableProfileCard';
+import { Profile } from '@/entities/Profile';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
+import { profileReducer } from '../../model/slice/profileSlice';
+import { $api } from '@/shared/api/api';
 
 const profile: Profile = {
     id: '1',
@@ -17,37 +17,37 @@ const profile: Profile = {
     currency: Currency.EUR,
     country: Country.Ukraine,
     city: 'LA',
-    username: 'admin228'
-}
+    username: 'admin228',
+};
 
 const options = {
     initialState: {
         profile: {
             readonly: true,
             data: profile,
-            form: profile
+            form: profile,
         },
         user: {
             authData: {
                 id: '1',
-                username: 'admin228'
-            }
-        }
+                username: 'admin228',
+            },
+        },
     },
     asyncReducers: {
-        profile: profileReducer
-    }
-}
+        profile: profileReducer,
+    },
+};
 
 describe('fetaures/EditableProfileCard', () => {
     test('the mood "readonly" must switch to the mood "edit"', async () => {
-        componentRender(<EditableProfileCard id={'1'}/>, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
         expect(screen.getByTestId('EditableProfileCardHeader.CancelButton')).toBeInTheDocument();
     });
 
     test('the button "Cancel" cancel any changes in card', async () => {
-        componentRender(<EditableProfileCard id={'1'}/>, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
 
         await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
@@ -66,7 +66,7 @@ describe('fetaures/EditableProfileCard', () => {
     });
 
     test('check validation', async () => {
-        componentRender(<EditableProfileCard id={'1'}/>, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
 
         await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
@@ -78,7 +78,7 @@ describe('fetaures/EditableProfileCard', () => {
 
     test('If we do not have any errors of validations then click on save button must to send PUT request to the server', async () => {
         const mockPutReq = jest.spyOn($api, 'put');
-        componentRender(<EditableProfileCard id={'1'}/>, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
 
         await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
