@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { HTMLAttributeAnchorTarget, memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
@@ -7,6 +7,7 @@ import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
+import { Virtuoso } from 'react-virtuoso';
 
 interface ArticleListProps {
     className?: string;
@@ -22,6 +23,8 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL
         <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
     ));
 
+
+
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
         className,
@@ -31,6 +34,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
         target,
     } = props;
     const { t } = useTranslation();
+
+    // const articlesList = useCallback(() => {
+    //     if(view === ArticleView.BIG)
+    // }, [view])
 
     if (!isLoading && !articles.length) {
         return (
@@ -51,7 +58,35 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     className={cls.card}
                 />
             ))}
+
+            <Virtuoso
+                style={{ height: '400px' }}
+                totalCount={200}
+                itemContent={index => <div>Item {index}</div>}
+            />
+
             {isLoading && getSkeletons(view)}
         </div>
     );
 });
+/*
+ <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+            {articles.map((item) => (
+                <ArticleListItem
+                    article={item}
+                    view={view}
+                    target={target}
+                    key={item.id}
+                    className={cls.card}
+                />
+            ))}
+
+            <Virtuoso
+                style={{ height: '400px' }}
+                totalCount={200}
+                itemContent={index => <div>Item {index}</div>}
+            />
+
+            {isLoading && getSkeletons(view)}
+        </div>
+*/
