@@ -7,7 +7,7 @@
         //Спсобы модульной сборки
         "module": "ESNext",
         //Версия стандарта в который компилится код
-        "target": "es5",
+        "target": "ESNext",
         "jsx": "react-jsx",
         //обработка js файлов
         "allowJs": true,
