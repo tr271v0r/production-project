@@ -1,5 +1,7 @@
-import { Rating } from './ui/Rating'
+import { RatingCard } from './ui/RatingCard/RatingCard'
 
 export {
-    Rating,
+    RatingCard,
 };
+
+export type {Rating} from './model/types/types'

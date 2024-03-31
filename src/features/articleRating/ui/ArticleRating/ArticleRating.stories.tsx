@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
 
-import { Rating } from './Rating';
+import ArticleRating from './ArticleRating';
 
-const meta: Meta<typeof Rating> = {
-    title: 'entity/Rating',
-    component: Rating,
+const meta: Meta<typeof ArticleRating> = {
+    title: 'features/ArticleRating',
+    component: ArticleRating,
     parameters: {
-        layout: 'centered',
+        layout: 'fullscreen',
     },
 
     tags: ['autodocs'],
@@ -18,9 +18,9 @@ const meta: Meta<typeof Rating> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Rating>;
+type Story = StoryObj<typeof ArticleRating>;
 
-export const RatingLight: Story = {
+export const ArticleRatingLight: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.LIGHT)(Story)
@@ -31,10 +31,21 @@ export const RatingLight: Story = {
     },
 };
 
-export const RatingDark: Story = {
+export const ArticleRatingDark: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.DARK)(Story)
+        )
+    ],
+    args: {
+
+    },
+};
+
+export const ArticleRatingOrange: Story = {
+    decorators: [
+        (Story) => (
+            ThemeDecorator(Theme.ORANGE)(Story)
         )
     ],
     args: {
