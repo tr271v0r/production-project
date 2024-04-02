@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { RatingCard } from './RatingCard';
 
 const meta: Meta<typeof RatingCard> = {
-    title: 'entity/RatingCard',
+    title: 'entities/RatingCard',
     component: RatingCard,
     parameters: {
         layout: 'centered',
@@ -20,24 +20,28 @@ const meta: Meta<typeof RatingCard> = {
 export default meta;
 type Story = StoryObj<typeof RatingCard>;
 
-export const RatingLight: Story = {
+export const WithoutRate: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.LIGHT)(Story)
-        )
+        ),
     ],
     args: {
-
+        feedbackTitle: 'Ваш отзыв очень важен для нас (нет)',
+        title: 'Как тебе такой стори-кейс?',
+        rate: 0,
     },
 };
 
-export const RatingDark: Story = {
+export const WithRate: Story = {
     decorators: [
         (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        )
+            ThemeDecorator(Theme.LIGHT)(Story)
+        ),
     ],
     args: {
-
+        feedbackTitle: 'Ваш отзыв очень важен для нас (нет)',
+        title: 'Как тебе такой стори-кейс?',
+        rate: 4,
     },
 };

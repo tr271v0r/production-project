@@ -23,7 +23,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
-        'mega'
+        'mega',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -47,9 +47,10 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': ['error',
             {
-                markupOnly: true, ignoreAttribute: [
-                    'data-testid', 
-                    'to', 
+                markupOnly: true,
+                ignoreAttribute: [
+                    'data-testid',
+                    'to',
                     'target',
                     'justify',
                     'align',
@@ -57,7 +58,7 @@ module.exports = {
                     'gap',
                     'role',
                     'as',
-                    'border'
+                    'border',
                 ],
             },
         ],
@@ -71,8 +72,8 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
-        'mega/path-checker': 'error',
-        'react/jsx-no-useless-fragment': 'warn'
+        'mega/path-checker': ['error', { alias: '@' }],
+        'react/jsx-no-useless-fragment': 'warn',
     },
     globals: {
         __IS_DEV__: true,

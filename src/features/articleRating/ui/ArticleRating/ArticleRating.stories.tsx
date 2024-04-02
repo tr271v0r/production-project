@@ -24,7 +24,7 @@ export const ArticleRatingLight: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.LIGHT)(Story)
-        )
+        ),
     ],
     args: {
 
@@ -35,7 +35,7 @@ export const ArticleRatingDark: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.DARK)(Story)
-        )
+        ),
     ],
     args: {
 
@@ -46,7 +46,7 @@ export const ArticleRatingOrange: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.ORANGE)(Story)
-        )
+        ),
     ],
     args: {
 

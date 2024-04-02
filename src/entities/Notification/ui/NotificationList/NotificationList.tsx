@@ -13,12 +13,11 @@ interface NotificationListProps {
 
 export const NotificationList = memo(({ className }: NotificationListProps) => {
     const { t } = useTranslation();
-    const { data, isLoading, error } = useNotifications(null, {
+    const { data, isLoading } = useNotifications(null, {
         pollingInterval: 5000,
     });
 
     if (isLoading) {
-        console.log(className);
         return (
             <VStack gap="16" max className={classNames(cls.NotificationList, {}, [className])}>
                 <Skeleton width="100%" border="8" height="80px" />

@@ -26,7 +26,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article-details');
     const { id } = useParams<{id: string}>();
 
-    if(!id){
+    if (!id) {
         return null;
     }
 
@@ -39,7 +39,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    <ArticleRating articleId={id}/>
+                    <ArticleRating articleId={id} />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>

@@ -36,7 +36,7 @@ export const Button: FC<ButtonProps> = memo((props) => {
         theme = ButtonTheme.OUTLINE,
         square,
         disabled,
-        fullWidth=false,
+        fullWidth = false,
         size = ButtonSize.M,
         ...otherProps
     } = props;
@@ -46,7 +46,7 @@ export const Button: FC<ButtonProps> = memo((props) => {
         [cls.square]: square,
         [cls[size]]: true,
         [cls.disabled]: disabled,
-        [cls.fullWidth]: fullWidth
+        [cls.fullWidth]: fullWidth,
     };
 
     return (

@@ -9,7 +9,7 @@ const MainPage = () => {
         <Page>
             {/* <BugButton /> */}
             {t('Главная страница')}
-            <RatingCard title='SUS' feedbackTitle='feedback'/>
+            <RatingCard title="SUS" feedbackTitle="feedback" />
         </Page>
     );
 };
