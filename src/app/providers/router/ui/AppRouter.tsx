@@ -1,12 +1,11 @@
 import {
-    Suspense, memo, useCallback, useMemo,
+    Suspense, memo, useCallback,
 } from 'react';
-import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import { getUserAuthData } from '@/entities/User';
-import { AppRoutes, AppRoutesProps, routeConfig } from '@/shared/config/routeConfig/routeConfig';
 import { PageLoader } from '@/widgets/PageLoader';
 import { RequireAuth } from './RequireAuth';
+import { AppRoutesProps } from '@/shared/types/router';
+import { routeConfig } from '../config/routeConfig';
 
 const AppRouter = () => {
     // для того чтобы ссылка сохранялась и не приходилось делать одни и те же вычисления
