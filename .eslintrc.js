@@ -73,6 +73,7 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
         'mega/path-checker': ['error', { alias: '@' }],
+        'mega/fsd-incapsulator-modules': ['error', { alias: '@' }],
         'react/jsx-no-useless-fragment': 'warn',
     },
     globals: {

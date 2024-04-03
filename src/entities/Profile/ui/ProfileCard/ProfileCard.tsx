@@ -4,8 +4,7 @@ import { Input } from '@/shared/ui/Input/Input';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
 import { Loader } from '@/shared/ui/Loader/Loader';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Currency } from '@/entities/Currency';
-import { CurrencySelect } from '@/entities/Currency/ui/CurrencySelect/CurrencySelect';
+import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
 
 import { Profile } from '../../model/types/profile';

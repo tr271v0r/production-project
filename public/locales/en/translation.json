@@ -33,5 +33,6 @@
   "Поиск": "Search",
   "Введите текст комментария": "Enter a text of comment",
   "Отправить": "Send",
-  "У вас нет доступа для этой страницы": "You do not have the permissions for this page"
+  "У вас нет доступа для этой страницы": "You do not have the permissions for this page",
+  "Загрузка": "Loading"
 }
