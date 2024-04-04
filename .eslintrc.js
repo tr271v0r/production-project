@@ -81,6 +81,14 @@ module.exports = {
             },
 
         ],
+        'mega/fsd-layers-import': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+
+        ],
         'react/jsx-no-useless-fragment': 'warn',
     },
     globals: {
