@@ -24,6 +24,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'mega',
+        'unused-imports',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -37,6 +38,7 @@ module.exports = {
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'warn',
+        'unused-imports/no-unused-imports': 'error',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/function-component-definition': 'off',

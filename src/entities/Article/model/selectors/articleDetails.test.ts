@@ -4,7 +4,6 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from './articleDetails';
-import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 
 describe('getArticleDetialsData.test', () => {
     test('should return data', () => {
