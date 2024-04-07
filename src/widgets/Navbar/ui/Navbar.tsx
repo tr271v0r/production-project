@@ -7,11 +7,11 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { Text, TextTheme } from '@/shared/ui/Text';
-import { RoutePath } from '@/shared/const/router';
 import cls from './Navbar.module.scss';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps{
     className?: string;
@@ -41,7 +41,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 />
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
-                    to={RoutePath.article_create}
+                    to={getRouteArticleCreate()}
                     className={cls.createBtn}
                 >
                     {t('Создать статью')}

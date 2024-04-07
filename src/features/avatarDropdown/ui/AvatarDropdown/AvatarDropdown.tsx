@@ -9,8 +9,8 @@ import { Avatar } from '@/shared/ui/Avatar';
 import {
     getUserAuthData, isUserAdmin, isUserModerator, userActions,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/const/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -42,9 +42,9 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
             items={[
                 ...(isAdminPanelAvailable ? [{
                     content: t('Админка'),
-                    href: RoutePath.admin_panel,
+                    href: getRouteAdminPanel(),
                 }] : []),
-                { content: 'Профиль', href: RoutePath.profile + authData.id },
+                { content: 'Профиль', href: getRouteProfile(authData.id) },
                 { content: 'Выйти', onClick: onLogout },
             ]}
             direction="bottom left"
