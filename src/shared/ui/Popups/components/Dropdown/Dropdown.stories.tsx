@@ -28,10 +28,10 @@ const meta: Meta<typeof Dropdown> = {
 export default meta;
 type Story = StoryObj<typeof Dropdown>;
 
-export const Normal: Story = {
-
+export const TopLeft: Story = {
     args: {
         trigger: <Button>Open</Button>,
+        direction: 'top left',
         items: [
             { content: 'first' },
             { content: 'second' },
@@ -41,10 +41,36 @@ export const Normal: Story = {
     },
 };
 
-export const topLeft: Story = {
+export const TopRight: Story = {
     args: {
         trigger: <Button>Open</Button>,
-        direction: 'top left',
+        direction: 'top right',
+        items: [
+            { content: 'first' },
+            { content: 'second' },
+            { content: 'third' },
+
+        ],
+    },
+};
+
+export const BottomLeft: Story = {
+    args: {
+        trigger: <Button>Open</Button>,
+        direction: 'bottom left',
+        items: [
+            { content: 'first' },
+            { content: 'second' },
+            { content: 'third' },
+
+        ],
+    },
+};
+
+export const BottomRight: Story = {
+    args: {
+        trigger: <Button>Open</Button>,
+        direction: 'bottom right',
         items: [
             { content: 'first' },
             { content: 'second' },

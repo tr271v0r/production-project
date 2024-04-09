@@ -62,7 +62,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 />
             );
         case ArticleBlockType.IMAGE:
-            console.log('ArticleBlockType.IMAGE');
             return (
                 <ArticleImageBlockComponent
                     key={block.id}
@@ -71,7 +70,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 />
             );
         case ArticleBlockType.TEXT:
-            console.log('ArticleBlockType.TEXT');
             return (
                 <ArticleTextBlockComponent
                     key={block.id}
