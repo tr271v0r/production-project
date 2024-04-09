@@ -3,7 +3,7 @@ import { Page } from '@/widgets/Page';
 
 const AdminPanelPage = () => {
     return (
-        <Page>
+        <Page data-testid="AdminPanelPage">
             123
         </Page>
     );
