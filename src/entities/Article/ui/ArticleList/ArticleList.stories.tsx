@@ -126,18 +126,20 @@ export const LoadingSmall: Story = {
     },
 };
 
-export const ListSmall: Story = {
-    args: {
-        articles: new Array(9)
-            .fill(0)
-            .map((item, index) => ({
-                ...article,
-                id: String(index),
-            })),
-        isLoading: false,
-        view: ArticleView.SMALL,
-    },
-};
+// TODO
+
+// export const ListSmall: Story = {
+//     args: {
+//         articles: new Array(9)
+//             .fill(0)
+//             .map((item, index) => ({
+//                 ...article,
+//                 id: String(index),
+//             })),
+//         isLoading: false,
+//         view: ArticleView.SMALL,
+//     },
+// };
 
 export const ListBig: Story = {
     args: {

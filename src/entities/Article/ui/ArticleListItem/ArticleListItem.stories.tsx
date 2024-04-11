@@ -116,9 +116,11 @@ export const ArticleListItemBig: Story = {
     },
 };
 
-export const ArticleListItemSmall: Story = {
-    args: {
-        view: ArticleView.SMALL,
-        article,
-    },
-};
+// TODO
+
+// export const ArticleListItemSmall: Story = {
+//     args: {
+//         view: ArticleView.SMALL,
+//         article,
+//     },
+// };

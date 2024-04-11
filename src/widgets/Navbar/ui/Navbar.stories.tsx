@@ -3,6 +3,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Navbar } from './Navbar';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const meta: Meta<typeof Navbar> = {
     title: 'widget/Navbar',
@@ -18,6 +19,9 @@ const meta: Meta<typeof Navbar> = {
     decorators: [
         (Story) => (
             StoreDecorator({})(Story)
+        ),
+        (Story) => (
+            RouterDecorator()(Story)
         ),
     ],
 };
