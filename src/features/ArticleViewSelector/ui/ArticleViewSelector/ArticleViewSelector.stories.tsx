@@ -24,7 +24,7 @@ export const ArticleViewSelectorLight: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.LIGHT)(Story)
-        )
+        ),
     ],
     args: {
 
@@ -35,7 +35,7 @@ export const ArticleViewSelectorDark: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.DARK)(Story)
-        )
+        ),
     ],
     args: {
 
@@ -46,7 +46,7 @@ export const ArticleViewSelectorOrange: Story = {
     decorators: [
         (Story) => (
             ThemeDecorator(Theme.ORANGE)(Story)
-        )
+        ),
     ],
     args: {
 

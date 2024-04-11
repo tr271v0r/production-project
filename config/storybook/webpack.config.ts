@@ -42,5 +42,6 @@ export default ({ config }: {config: webpack.Configuration }) => {
         use: ['@svgr/webpack'],
     });
     config.module?.rules?.push(buildCssLoaders(true));
+
     return config;
 };
