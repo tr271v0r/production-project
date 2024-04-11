@@ -2,7 +2,6 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './AvatarDropdown.module.scss';
 import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
 
@@ -37,7 +36,7 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
 
     return (
         <Dropdown
-            className={classNames(cls.AvatarDropdown, {}, [className])}
+            className={classNames('', {}, [className])}
             trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
             items={[
                 ...(isAdminPanelAvailable ? [{

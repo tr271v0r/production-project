@@ -3,7 +3,6 @@ import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Page } from '@/widgets/Page';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleEditPage.module.scss';
 
 interface ArticleEditPageProps {
     className?: string;
@@ -15,7 +14,7 @@ const ArticleEditPage = ({ className }: ArticleEditPageProps) => {
     const isEdit = Boolean(id);// Если id отловился через useParams - режим редактирования статьи, иначе режим создания статьи
 
     return (
-        <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
+        <Page className={classNames('', {}, [className])}>
             {isEdit
                 ? t('Редактировать статью')
                 : t('Создать статью')}
