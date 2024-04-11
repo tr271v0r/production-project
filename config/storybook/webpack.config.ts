@@ -37,6 +37,8 @@ export default ({ config }: {config: webpack.Configuration }) => {
         __PROJECT__: JSON.stringify('storybook'),
     }));
 
+    // TODO [для исправления скрин теста на git actions нужно переопределить этот лоудер на поддержку jpeg]
+
     config.module?.rules?.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
