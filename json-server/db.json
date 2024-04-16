@@ -726,6 +726,17 @@
       "city": "Moscow",
       "username": "Полиция Нравов",
       "avatar": "https://u.9111s.ru/uploads/202112/08/d0a4ab72edc863987211fcb4edcbab4f.jpg"
+    },
+    {
+      "id": "4",
+      "first": "Rex",
+      "lastname": "Incc",
+      "age": 19,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "testuser",
+      "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album"
     }
   ],
   "article-ratings": [
