@@ -537,6 +537,32 @@
           ]
         }
       ]
+    },
+    {
+      "title": "CYPRESS article test",
+      "subtitle": "e2e testing",
+      "img": "https://avatars.githubusercontent.com/u/8908513?s=280&v=4",
+      "views": 1022,
+      "createdAt": "16.04.2024",
+      "userId": "4",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "vqOHWN_"
+    },
+    {
+      "title": "CYPRESS article test",
+      "subtitle": "e2e testing",
+      "img": "https://avatars.githubusercontent.com/u/8908513?s=280&v=4",
+      "views": 1022,
+      "createdAt": "16.04.2024",
+      "userId": "4",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "INozglC"
     }
   ],
   "comments": [
