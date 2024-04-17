@@ -12,20 +12,14 @@ const meta: Meta<typeof RatingCard> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof RatingCard>;
 
 export const WithoutRate: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
     args: {
         feedbackTitle: 'Ваш отзыв очень важен для нас (нет)',
         title: 'Как тебе такой стори-кейс?',
@@ -34,11 +28,7 @@ export const WithoutRate: Story = {
 };
 
 export const WithRate: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
     args: {
         feedbackTitle: 'Ваш отзыв очень важен для нас (нет)',
         title: 'Как тебе такой стори-кейс?',

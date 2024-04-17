@@ -14,9 +14,7 @@ const meta: Meta<typeof ArticleDetails> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
@@ -98,60 +96,48 @@ const article: Article = {
 
 export const Normal: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 articleDetails: {
                     data: article,
                 },
-            })(Story)
-        ),
-        (Story) => (
+            })(Story),
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            ThemeDecorator(Theme.LIGHT)(Story),
     ],
-    args: {
-
-    },
+    args: {},
 };
 
 export const Loading: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 articleDetails: {
                     isLoading: true,
                 },
-            })(Story)
-        ),
-        (Story) => (
+            })(Story),
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            ThemeDecorator(Theme.LIGHT)(Story),
     ],
-    args: {
-
-    },
+    args: {},
 };
 
 export const Error: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 articleDetails: {
                     error: 'Some error',
                 },
-            })(Story)
-        ),
-        (Story) => (
+            })(Story),
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            ThemeDecorator(Theme.LIGHT)(Story),
     ],
-    args: {
-
-    },
+    args: {},
 };

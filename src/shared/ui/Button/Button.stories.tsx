@@ -11,9 +11,7 @@ const meta: Meta<typeof Button> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
@@ -34,11 +32,7 @@ export const ClearInverted: Story = {
 };
 
 export const ClearDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
     args: {
         children: '123',
         theme: ButtonTheme.CLEAR,
@@ -69,11 +63,7 @@ export const OutlineSizeXL: Story = {
 };
 
 export const OutlineDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
     args: {
         children: '123',
         theme: ButtonTheme.OUTLINE,

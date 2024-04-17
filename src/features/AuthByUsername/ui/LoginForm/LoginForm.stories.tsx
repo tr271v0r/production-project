@@ -10,43 +10,32 @@ const meta: Meta<typeof LoginForm> = {
     parameters: {
         layout: 'fullscreen',
     },
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof LoginForm>;
 
 export const Primary: Story = {
-    args: {
-
-    },
+    args: {},
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 loginForm: {
                     username: '123',
                     password: '123',
                 },
-            })(Story)
-        ),
+            })(Story),
     ],
 };
 
 export const withError: Story = {
-    args: {
-
-    },
+    args: {},
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 loginForm: {
@@ -54,21 +43,17 @@ export const withError: Story = {
                     password: '123',
                     error: 'Error auth',
                 },
-            })(Story)
-        ),
+            })(Story),
     ],
 };
 
 export const Loading: Story = {
-    args: {
-
-    },
+    args: {},
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 loginForm: { isLoading: true },
-            })(Story)
-        ),
+            })(Story),
     ],
 };

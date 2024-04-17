@@ -38,54 +38,27 @@ const meta: Meta<typeof ArticleRecommendationsList> = {
         ],
     },
     decorators: [
-        (Story) => (
-            StoreDecorator({
-
-            })(Story)
-        ),
-        (Story) => (
-            RouterDecorator()(Story)
-        ),
+        (Story) => StoreDecorator({})(Story),
+        (Story) => RouterDecorator()(Story),
     ],
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof ArticleRecommendationsList>;
 
 export const ArticleRecommendationsListLight: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
+    args: {},
 };
 
 export const ArticleRecommendationsListDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
+    args: {},
 };
 
 export const ArticleRecommendationsListOrange: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.ORANGE)(Story)
-        ),
-
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.ORANGE)(Story)],
+    args: {},
 };

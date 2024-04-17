@@ -11,9 +11,7 @@ const meta: Meta<typeof Skeleton> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
@@ -21,10 +19,9 @@ type Story = StoryObj<typeof Skeleton>;
 
 export const Normal: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            ThemeDecorator(Theme.LIGHT)(Story),
     ],
     args: {
         width: '50vw',
@@ -34,10 +31,9 @@ export const Normal: Story = {
 
 export const Circle: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            ThemeDecorator(Theme.LIGHT)(Story),
     ],
     args: {
         border: '50%',
@@ -48,10 +44,9 @@ export const Circle: Story = {
 
 export const NormalDark: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
+            ThemeDecorator(Theme.DARK)(Story),
     ],
     args: {
         width: '50vw',
@@ -61,10 +56,9 @@ export const NormalDark: Story = {
 
 export const CircleDark: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
+            ThemeDecorator(Theme.DARK)(Story),
     ],
     args: {
         border: '50%',

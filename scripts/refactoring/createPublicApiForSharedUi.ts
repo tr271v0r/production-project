@@ -19,14 +19,23 @@ componentsDirs?.forEach((directory) => {
     // console.log(indexFile?.getBaseName());
     if (!indexFile) {
         const sourceCode = `export * from './${directory.getBaseName()}';`;
-        const file = directory.createSourceFile(indexFilePath, sourceCode, { overwrite: true });
+        const file = directory.createSourceFile(indexFilePath, sourceCode, {
+            overwrite: true,
+        });
 
         file.save();
     }
 });
 
 function isAbsolute(value: string) {
-    const layers = ['app', 'shared', 'pages', 'entities', 'widgets', 'features'];
+    const layers = [
+        'app',
+        'shared',
+        'pages',
+        'entities',
+        'widgets',
+        'features',
+    ];
     return layers.some((layer) => value.startsWith(layer));
 }
 

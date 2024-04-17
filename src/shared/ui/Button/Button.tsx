@@ -12,18 +12,18 @@ export enum ButtonTheme {
     BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
-export enum ButtonSize{
+export enum ButtonSize {
     M = 'size_m',
     L = 'size_l',
     XL = 'size_xl',
 }
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ButtonTheme;
     square?: boolean;
     size?: ButtonSize;
-    disabled?:boolean;
+    disabled?: boolean;
     children?: React.ReactNode;
     fullWidth?: boolean;
 }

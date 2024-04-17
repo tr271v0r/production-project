@@ -53,27 +53,37 @@ describe('loginByUsername.test', () => {
 
         const thunk = new TestAsyncThunk(loginByUsername);
         thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));
-        const result = await thunk.callThunk({ username: '123', password: '123' });
+        const result = await thunk.callThunk({
+            username: '123',
+            password: '123',
+        });
 
-        expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
-        expect(thunk.dispatch).toHaveBeenCalledTimes(3);// проверка количества вызовов dispatch
-        expect(thunk.api.post).toHaveBeenCalled();// проверка на то, выполнился ли запрос на сервак
-        expect(result.meta.requestStatus).toBe('fulfilled');// запрос выполнился и никаких ошибок
+        expect(thunk.dispatch).toHaveBeenCalledWith(
+            userActions.setAuthData(userValue),
+        );
+        expect(thunk.dispatch).toHaveBeenCalledTimes(3); // проверка количества вызовов dispatch
+        expect(thunk.api.post).toHaveBeenCalled(); // проверка на то, выполнился ли запрос на сервак
+        expect(result.meta.requestStatus).toBe('fulfilled'); // запрос выполнился и никаких ошибок
         expect(result.payload).toEqual(userValue);
     });
 
     test('error login', async () => {
         const thunk = new TestAsyncThunk(loginByUsername);
 
-        thunk.api.post.mockReturnValue(Promise.resolve({
-            status: 403,
-        }));
+        thunk.api.post.mockReturnValue(
+            Promise.resolve({
+                status: 403,
+            }),
+        );
 
-        const result = await thunk.callThunk({ username: '123', password: '123' });
+        const result = await thunk.callThunk({
+            username: '123',
+            password: '123',
+        });
 
-        expect(thunk.dispatch).toHaveBeenCalledTimes(2);// проверка количества вызовов dispatch
-        expect(thunk.api.post).toHaveBeenCalled();// проверка на то, выполнился ли запрос на сервак
-        expect(result.meta.requestStatus).toBe('rejected');// запрос выполнился и никаких ошибок
+        expect(thunk.dispatch).toHaveBeenCalledTimes(2); // проверка количества вызовов dispatch
+        expect(thunk.api.post).toHaveBeenCalled(); // проверка на то, выполнился ли запрос на сервак
+        expect(result.meta.requestStatus).toBe('rejected'); // запрос выполнился и никаких ошибок
         expect(result.payload).toBe('error');
     });
 });

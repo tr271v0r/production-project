@@ -48,9 +48,11 @@ describe('fetchProfileData.test', () => {
             },
         });
 
-        thunk.api.put.mockReturnValue(Promise.resolve({
-            status: 403,
-        }));
+        thunk.api.put.mockReturnValue(
+            Promise.resolve({
+                status: 403,
+            }),
+        );
 
         const result = await thunk.callThunk();
 
@@ -67,6 +69,8 @@ describe('fetchProfileData.test', () => {
         const result = await thunk.callThunk();
 
         expect(result.meta.requestStatus).toBe('rejected');
-        expect(result.payload).toEqual([validateProfileError.INCORRECT_USER_DATA]);
+        expect(result.payload).toEqual([
+            validateProfileError.INCORRECT_USER_DATA,
+        ]);
     });
 });

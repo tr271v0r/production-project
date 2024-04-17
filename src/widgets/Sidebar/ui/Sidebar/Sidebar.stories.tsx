@@ -13,18 +13,13 @@ const meta: Meta<typeof Sidebar> = {
         layout: 'fullscreen',
     },
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            StoreDecorator({})(Story)
-        ),
-        (Story) => (
-            RouterDecorator()(Story)
-        ),
+            StoreDecorator({})(Story),
+        (Story) => RouterDecorator()(Story),
     ],
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
@@ -32,46 +27,32 @@ type Story = StoryObj<typeof Sidebar>;
 
 export const Light: Story = {
     decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-        (Story) => (
+        (Story) => ThemeDecorator(Theme.LIGHT)(Story),
+        (Story) =>
             StoreDecorator({
                 user: { authData: {} },
-            })(Story)
-        ),
-
+            })(Story),
     ],
-    args: {
-
-    },
+    args: {},
 };
 
 export const Dark: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             StoreDecorator({
                 user: { authData: {} },
-            })(Story)
-        ),
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
+            })(Story),
+        (Story) => ThemeDecorator(Theme.DARK)(Story),
     ],
-    args: {
-
-    },
+    args: {},
 };
 
 export const NoAuth: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             StoreDecorator({
                 user: {},
-            })(Story)
-        ),
+            })(Story),
     ],
-    args: {
-
-    },
+    args: {},
 };

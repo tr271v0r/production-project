@@ -7,11 +7,11 @@ const meta: Meta<typeof ListBox> = {
     title: 'shared/ListBox',
     component: ListBox,
     decorators: [
+        (Story) => ThemeDecorator(Theme.LIGHT)(Story),
         (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-        (Story) => (
-            <div style={{ padding: 300 }}><Story /></div>
+            <div style={{ padding: 300 }}>
+                <Story />
+            </div>
         ),
     ],
     parameters: {
@@ -19,9 +19,7 @@ const meta: Meta<typeof ListBox> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;

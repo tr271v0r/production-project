@@ -11,9 +11,7 @@ const meta: Meta<typeof Text> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
@@ -44,10 +42,9 @@ export const PrimaryDark: Story = {
         text: 'Text Text Text Text Text Text Text',
     },
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
+            ThemeDecorator(Theme.DARK)(Story),
     ],
 };
 
@@ -56,10 +53,9 @@ export const onlyTitleDark: Story = {
         title: 'Title',
     },
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
+            ThemeDecorator(Theme.DARK)(Story),
     ],
 };
 
@@ -68,10 +64,9 @@ export const onlyTextDark: Story = {
         text: 'Text Text Text Text Text Text Text',
     },
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
+            ThemeDecorator(Theme.DARK)(Story),
     ],
 };
 

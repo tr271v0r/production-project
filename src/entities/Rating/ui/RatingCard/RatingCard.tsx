@@ -38,15 +38,18 @@ export const RatingCard = memo((props: RatingProps) => {
     const [feedback, setFeedback] = useState('');
 
     // useCalbback - чтобы StarRating лишний раз не перерисовывался
-    const onSelectStars = useCallback((selectedStarsCount: number) => {
-        setStarsCount(selectedStarsCount);
-        if (hasFeedback) {
+    const onSelectStars = useCallback(
+        (selectedStarsCount: number) => {
+            setStarsCount(selectedStarsCount);
+            if (hasFeedback) {
+                setIsModalOpen(true);
+            } else {
+                onAccept?.(selectedStarsCount);
+            }
             setIsModalOpen(true);
-        } else {
-            onAccept?.(selectedStarsCount);
-        }
-        setIsModalOpen(true);
-    }, [hasFeedback, onAccept]);
+        },
+        [hasFeedback, onAccept],
+    );
 
     const acceptHandle = useCallback(() => {
         setIsModalOpen(false);
@@ -72,12 +75,13 @@ export const RatingCard = memo((props: RatingProps) => {
 
     return (
         <Card className={className} max data-testid="RatingCard">
-            <VStack
-                align="center"
-                gap="8"
-            >
+            <VStack align="center" gap="8">
                 <Text title={starsCount ? t('Спасибо за отзыв!') : title} />
-                <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
+                <StarRating
+                    selectedStars={starsCount}
+                    size={40}
+                    onSelect={onSelectStars}
+                />
             </VStack>
 
             <BrowserView>
@@ -86,30 +90,33 @@ export const RatingCard = memo((props: RatingProps) => {
                     onClose={() => setIsModalOpen(false)}
                     lazy
                 >
-                    <VStack
-                        align="center"
-                        gap="8"
-                    >
+                    <VStack align="center" gap="8">
                         {modalContent}
                         <HStack max gap="16" justify="center">
-                            <Button data-testid="RatingCard.Close" onClick={cancelHandle} theme={ButtonTheme.OUTLINE_RED}>{t('Закрыть')}</Button>
-                            <Button data-testid="RatingCard.Send" onClick={acceptHandle}>{t('Отправить')}</Button>
+                            <Button
+                                data-testid="RatingCard.Close"
+                                onClick={cancelHandle}
+                                theme={ButtonTheme.OUTLINE_RED}
+                            >
+                                {t('Закрыть')}
+                            </Button>
+                            <Button
+                                data-testid="RatingCard.Send"
+                                onClick={acceptHandle}
+                            >
+                                {t('Отправить')}
+                            </Button>
                         </HStack>
                     </VStack>
                 </Modal>
             </BrowserView>
             <MobileView>
-                <Drawer
-                    isOpen={isModalOpen}
-                    onClose={cancelHandle}
-                    lazy
-                >
-                    <VStack
-                        align="center"
-                        gap="32"
-                    >
+                <Drawer isOpen={isModalOpen} onClose={cancelHandle} lazy>
+                    <VStack align="center" gap="32">
                         {modalContent}
-                        <Button onClick={acceptHandle} fullWidth>{t('Отправить')}</Button>
+                        <Button onClick={acceptHandle} fullWidth>
+                            {t('Отправить')}
+                        </Button>
                     </VStack>
                 </Drawer>
             </MobileView>

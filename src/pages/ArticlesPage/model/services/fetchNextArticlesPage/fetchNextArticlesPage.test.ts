@@ -15,7 +15,6 @@ describe('fetchNextArticlesPage.test', () => {
                 isLoading: false,
                 hasMore: true,
             },
-
         });
         await thunk.callThunk();
 
@@ -33,7 +32,6 @@ describe('fetchNextArticlesPage.test', () => {
                 isLoading: false,
                 hasMore: false,
             },
-
         });
         await thunk.callThunk();
 
@@ -51,7 +49,6 @@ describe('fetchNextArticlesPage.test', () => {
                 isLoading: true,
                 hasMore: true,
             },
-
         });
         await thunk.callThunk();
 

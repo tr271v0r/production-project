@@ -1,7 +1,11 @@
 import { screen } from '@testing-library/react';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import AppRouter from './AppRouter';
-import { getRouteAbout, getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
+import {
+    getRouteAbout,
+    getRouteAdminPanel,
+    getRouteProfile,
+} from '@/shared/const/router';
 import { UserRole } from '@/entities/User';
 
 describe('app/router/AppRouter.test', () => {
@@ -65,7 +69,6 @@ describe('app/router/AppRouter.test', () => {
                     _inited: true,
                     authData: { roles: [UserRole.ADMIN] },
                 },
-
             },
         });
         const page = await screen.findByTestId('AdminPanelPage');

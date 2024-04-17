@@ -17,7 +17,7 @@ const meta: Meta<typeof ProfilePage> = {
     },
 
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 profile: {
@@ -32,50 +32,27 @@ const meta: Meta<typeof ProfilePage> = {
                         avatar: AvatarImg,
                     },
                 },
-            })(Story)
-        ),
-        (Story) => (
-            RouterDecorator()(Story)
-        ),
+            })(Story),
+        (Story) => RouterDecorator()(Story),
     ],
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof ProfilePage>;
 
 export const Light: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
+    args: {},
 };
 
 export const Dark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
+    args: {},
 };
 
 export const Orange: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.ORANGE)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.ORANGE)(Story)],
+    args: {},
 };

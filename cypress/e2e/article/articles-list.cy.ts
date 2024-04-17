@@ -8,7 +8,10 @@ describe('Пользователь заходит на страницу со с�
     describe('Работа с API', () => {
         it('Список статей успешно подгружается', () => {
             cy.getByTestId('ArticleList').should('exist');
-            cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);
+            cy.getByTestId('ArticleListItem').should(
+                'have.length.greaterThan',
+                3,
+            );
         });
     });
 
@@ -17,7 +20,10 @@ describe('Пользователь заходит на страницу со с�
             cy.intercept('GET', '**/articles?*', { fixture: 'articles.json' });
 
             cy.getByTestId('ArticleList').should('exist');
-            cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);
+            cy.getByTestId('ArticleListItem').should(
+                'have.length.greaterThan',
+                3,
+            );
         });
     });
     describe('Скипнутые тесты', () => {

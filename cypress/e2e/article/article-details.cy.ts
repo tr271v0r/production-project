@@ -36,7 +36,9 @@ describe('Пользователь заходит на странциу стат
 
     describe('Работа на стабах (фикстурах)', () => {
         it('Выставление оценки статьи пользователем', () => {
-            cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
+            cy.intercept('GET', '**/articles/*', {
+                fixture: 'article-details.json',
+            });
 
             cy.getByTestId('ArticleDetails.Info');
             cy.getByTestId('RatingCard').scrollIntoView();

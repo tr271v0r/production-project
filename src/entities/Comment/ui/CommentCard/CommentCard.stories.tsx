@@ -13,23 +13,14 @@ const meta: Meta<typeof CommentCard> = {
         layout: 'fullscreen',
     },
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            StoreDecorator({
-
-            })(Story)
-        ),
-        (Story) => (
-            RouterDecorator()(Story)
-        ),
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            StoreDecorator({})(Story),
+        (Story) => RouterDecorator()(Story),
+        (Story) => ThemeDecorator(Theme.LIGHT)(Story),
     ],
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
@@ -37,13 +28,21 @@ type Story = StoryObj<typeof CommentCard>;
 
 export const Normal: Story = {
     args: {
-        comment: { id: '1', text: 'Hello guys!', user: { id: '1', username: 'Oleg Nagib', avatar: Img } },
+        comment: {
+            id: '1',
+            text: 'Hello guys!',
+            user: { id: '1', username: 'Oleg Nagib', avatar: Img },
+        },
     },
 };
 
 export const IsLoading: Story = {
     args: {
-        comment: { id: '1', text: 'something', user: { id: '1', username: 'Oleg' } },
+        comment: {
+            id: '1',
+            text: 'something',
+            user: { id: '1', username: 'Oleg' },
+        },
         isLoading: true,
     },
 };

@@ -13,14 +13,12 @@ const preview: Preview = {
             RouterDecorator()(Story),
             SuspenseDecorator()(Story)
         ),
-
     ],
     parameters: {
         decorators: [
-            (Story) => (
+            (Story) =>
                 // eslint-disable-next-line no-sequences
-                StyleDecorator(Story)
-            ),
+                StyleDecorator(Story),
         ],
         actions: { argTypesRegex: '^on[A-Z].*' },
         controls: {

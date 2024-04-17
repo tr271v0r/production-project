@@ -11,19 +11,24 @@ interface NotificationItemProps {
     item: Notification;
 }
 
-export const NotificationItem = memo(({ className, item }: NotificationItemProps) => {
-    const content = (
-        <Card theme={CardTheme.OUTLINE} className={classNames(cls.NotificationItem, {}, [className])}>
-            <Text title={item.title} text={item.description} />
-        </Card>
-    );
-
-    if (item.href) {
-        return (
-            <AppLink to={item.href} target="_blank" className={cls.link}>
-                {content}
-            </AppLink>
+export const NotificationItem = memo(
+    ({ className, item }: NotificationItemProps) => {
+        const content = (
+            <Card
+                theme={CardTheme.OUTLINE}
+                className={classNames(cls.NotificationItem, {}, [className])}
+            >
+                <Text title={item.title} text={item.description} />
+            </Card>
         );
-    }
-    return content;
-});
+
+        if (item.href) {
+            return (
+                <AppLink to={item.href} target="_blank" className={cls.link}>
+                    {content}
+                </AppLink>
+            );
+        }
+        return content;
+    },
+);

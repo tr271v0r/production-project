@@ -3,7 +3,7 @@ import path from 'path';
 import { BuildPaths } from '../build/types/config';
 import { buildCssLoaders } from '../build/loaders/buildCssLoaders';
 
-export default ({ config }: {config: webpack.Configuration }) => {
+export default ({ config }: { config: webpack.Configuration }) => {
     const paths: BuildPaths = {
         entry: '',
         build: '',
@@ -31,11 +31,13 @@ export default ({ config }: {config: webpack.Configuration }) => {
         });
     }
 
-    config.plugins?.push(new DefinePlugin({
-        __IS_DEV__: JSON.stringify(true),
-        __API__: JSON.stringify('https://testapi.ru'),
-        __PROJECT__: JSON.stringify('storybook'),
-    }));
+    config.plugins?.push(
+        new DefinePlugin({
+            __IS_DEV__: JSON.stringify(true),
+            __API__: JSON.stringify('https://testapi.ru'),
+            __PROJECT__: JSON.stringify('storybook'),
+        }),
+    );
 
     // TODO [для исправления скрин теста на git actions нужно переопределить этот лоудер на поддержку jpeg]
 

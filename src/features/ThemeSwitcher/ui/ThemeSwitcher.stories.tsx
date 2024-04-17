@@ -11,32 +11,18 @@ const meta: Meta<typeof ThemeSwitcher> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof ThemeSwitcher>;
 
 export const Light: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
+    args: {},
 };
 
 export const Dark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
+    args: {},
 };

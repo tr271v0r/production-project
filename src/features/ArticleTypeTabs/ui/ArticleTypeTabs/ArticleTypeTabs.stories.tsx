@@ -12,43 +12,23 @@ const meta: Meta<typeof ArticleTypeTabs> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof ArticleTypeTabs>;
 
 export const ArticleTypeTabsLight: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
+    args: {},
 };
 
 export const ArticleTypeTabsDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
+    args: {},
 };
 
 export const ArticleTypeTabsOrange: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.ORANGE)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.ORANGE)(Story)],
+    args: {},
 };

@@ -11,19 +11,16 @@ const meta: Meta<typeof ProfileCard> = {
     title: 'entities/ProfileCard',
     component: ProfileCard,
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            ThemeDecorator(Theme.LIGHT)(Story),
     ],
     parameters: {
         layout: 'fullscreen',
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;

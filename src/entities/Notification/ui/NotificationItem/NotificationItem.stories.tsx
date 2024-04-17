@@ -12,36 +12,30 @@ const meta: Meta<typeof NotificationItem> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof NotificationItem>;
 
 export const NotificationLight: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
     args: {
         item: {
-            id: '1', description: 'You should me more polite with regard to friends!', title: 'УВАГА',
+            id: '1',
+            description: 'You should me more polite with regard to friends!',
+            title: 'УВАГА',
         },
     },
 };
 
 export const NotificationDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
     args: {
         item: {
-            id: '1', description: 'You should me more polite with regard to friends!', title: 'УВАГА',
+            id: '1',
+            description: 'You should me more polite with regard to friends!',
+            title: 'УВАГА',
         },
     },
 };

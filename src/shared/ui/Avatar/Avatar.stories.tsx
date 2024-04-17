@@ -10,9 +10,7 @@ const meta: Meta<typeof Avatar> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;

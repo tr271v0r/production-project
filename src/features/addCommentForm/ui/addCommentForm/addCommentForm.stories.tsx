@@ -12,9 +12,7 @@ const meta: Meta<typeof addCommentForm> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
@@ -25,15 +23,10 @@ export const Light: Story = {
         onSendComment: () => {},
     },
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            StoreDecorator({
-
-            })(Story)
-        ),
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            StoreDecorator({})(Story),
+        (Story) => ThemeDecorator(Theme.LIGHT)(Story),
     ],
 };
 export const Dark: Story = {
@@ -41,15 +34,10 @@ export const Dark: Story = {
         onSendComment: () => {},
     },
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            StoreDecorator({
-
-            })(Story)
-        ),
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
+            StoreDecorator({})(Story),
+        (Story) => ThemeDecorator(Theme.DARK)(Story),
     ],
 };
 export const Orange: Story = {
@@ -57,14 +45,9 @@ export const Orange: Story = {
         onSendComment: () => {},
     },
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            StoreDecorator({
-
-            })(Story)
-        ),
-        (Story) => (
-            ThemeDecorator(Theme.ORANGE)(Story)
-        ),
+            StoreDecorator({})(Story),
+        (Story) => ThemeDecorator(Theme.ORANGE)(Story),
     ],
 };

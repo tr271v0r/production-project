@@ -5,7 +5,11 @@ import { validateProfileData } from '../validateProfileData/validateProfileData'
 import { Profile } from '@/entities/Profile';
 import { validateProfileError } from '../../consts/consts';
 
-export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<validateProfileError[]>>(
+export const updateProfileData = createAsyncThunk<
+    Profile,
+    void,
+    ThunkConfig<validateProfileError[]>
+>(
     'profile/updateProfileData',
     async (_, { extra, rejectWithValue, getState }) => {
         const formData = getProfileForm(getState());

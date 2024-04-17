@@ -13,26 +13,19 @@ const meta: Meta<typeof CommentList> = {
         layout: 'fullscreen',
     },
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 loginForm: {
                     username: '123',
                     password: '123',
                 },
-            })(Story)
-        ),
-        (Story) => (
-            RouterDecorator()(Story)
-        ),
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            })(Story),
+        (Story) => RouterDecorator()(Story),
+        (Story) => ThemeDecorator(Theme.LIGHT)(Story),
     ],
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;

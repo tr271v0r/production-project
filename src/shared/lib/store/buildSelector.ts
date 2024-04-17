@@ -9,8 +9,5 @@ export function buildSelector<T>(selector: Selector<T>): Result<T> {
         return useSelector(selector);
     };
 
-    return [
-        useSelectorHook,
-        selector,
-    ];
+    return [useSelectorHook, selector];
 }

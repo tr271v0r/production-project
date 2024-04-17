@@ -8,7 +8,9 @@ describe('getLoginPassword.test', () => {
                 password: 'verySecretPassword',
             },
         };
-        expect(getLoginPassword(state as StateSchema)).toBe('verySecretPassword');
+        expect(getLoginPassword(state as StateSchema)).toBe(
+            'verySecretPassword',
+        );
     });
 
     test('should to work with the empty state', () => {

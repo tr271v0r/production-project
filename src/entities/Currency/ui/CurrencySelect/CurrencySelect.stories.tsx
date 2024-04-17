@@ -7,13 +7,14 @@ const meta: Meta<typeof CurrencySelect> = {
     title: 'entities/CurrencySelect',
     component: CurrencySelect,
     decorators: [
+        (Story) =>
+            // eslint-disable-next-line no-sequences
+            ThemeDecorator(Theme.LIGHT)(Story),
         (Story) => (
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-        (Story) => (
-            // eslint-disable-next-line no-sequences
-            <div style={{ padding: 300 }}><Story /></div>
+            <div style={{ padding: 300 }}>
+                <Story />
+            </div>
         ),
     ],
     parameters: {
@@ -21,18 +22,14 @@ const meta: Meta<typeof CurrencySelect> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof CurrencySelect>;
 
 export const Normal: Story = {
-    args: {
-
-    },
+    args: {},
 };
 
 export const TopLeft: Story = {

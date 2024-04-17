@@ -8,11 +8,11 @@ const meta: Meta<typeof Dropdown> = {
     title: 'shared/Dropdown',
     component: Dropdown,
     decorators: [
+        (Story) => ThemeDecorator(Theme.LIGHT)(Story),
         (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-        (Story) => (
-            <div style={{ padding: 300 }}><Story /></div>
+            <div style={{ padding: 300 }}>
+                <Story />
+            </div>
         ),
     ],
     parameters: {
@@ -20,9 +20,7 @@ const meta: Meta<typeof Dropdown> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
@@ -36,7 +34,6 @@ export const TopLeft: Story = {
             { content: 'first' },
             { content: 'second' },
             { content: 'third' },
-
         ],
     },
 };
@@ -49,7 +46,6 @@ export const TopRight: Story = {
             { content: 'first' },
             { content: 'second' },
             { content: 'third' },
-
         ],
     },
 };
@@ -62,7 +58,6 @@ export const BottomLeft: Story = {
             { content: 'first' },
             { content: 'second' },
             { content: 'third' },
-
         ],
     },
 };
@@ -75,7 +70,6 @@ export const BottomRight: Story = {
             { content: 'first' },
             { content: 'second' },
             { content: 'third' },
-
         ],
     },
 };

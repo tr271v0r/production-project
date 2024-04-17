@@ -84,10 +84,12 @@ describe('profileSlice.test', () => {
             isLoading: false,
         };
 
-        expect(articleDetailsReducer(
-            state as ArticleDetailsSchema,
-            fetchArticleById.pending,
-        )).toEqual({
+        expect(
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.pending,
+            ),
+        ).toEqual({
             isLoading: true,
         });
     });
@@ -98,10 +100,12 @@ describe('profileSlice.test', () => {
             data,
         };
 
-        expect(articleDetailsReducer(
-            state as ArticleDetailsSchema,
-            fetchArticleById.fulfilled(data, '', ''),
-        )).toEqual({
+        expect(
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.fulfilled(data, '', ''),
+            ),
+        ).toEqual({
             isLoading: false,
             data,
         });

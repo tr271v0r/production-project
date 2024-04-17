@@ -7,19 +7,16 @@ const meta: Meta<typeof Select> = {
     title: 'shared/Select',
     component: Select,
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            ThemeDecorator(Theme.LIGHT)(Story),
     ],
     parameters: {
         layout: 'fullscreen',
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;

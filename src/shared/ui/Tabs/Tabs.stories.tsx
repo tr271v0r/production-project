@@ -12,9 +12,7 @@ const meta: Meta<typeof Tabs> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
@@ -22,10 +20,9 @@ type Story = StoryObj<typeof Tabs>;
 
 export const Normal: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            ThemeDecorator(Theme.LIGHT)(Story),
     ],
     args: {
         tabs: [

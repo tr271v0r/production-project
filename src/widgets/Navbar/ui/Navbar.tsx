@@ -13,7 +13,7 @@ import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { getRouteArticleCreate } from '@/shared/const/router';
 
-interface NavbarProps{
+interface NavbarProps {
     className?: string;
 }
 
@@ -65,10 +65,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             </Button>
 
             {isAuthModal && (
-                <LoginModal
-                    isOpen={isAuthModal}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             )}
         </header>
     );

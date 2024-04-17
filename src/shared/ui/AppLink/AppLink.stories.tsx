@@ -12,18 +12,13 @@ const meta: Meta<typeof AppLink> = {
         layout: 'fullscreen',
     },
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            StoreDecorator({})(Story)
-        ),
-        (Story) => (
-            RouterDecorator()(Story)
-        ),
+            StoreDecorator({})(Story),
+        (Story) => RouterDecorator()(Story),
     ],
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
     args: {
         to: '/',
         children: 'text',
@@ -52,33 +47,21 @@ export const Red: Story = {
 };
 
 export const PrimaryDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
     args: {
         theme: AppLinkTheme.PRIMARY,
     },
 };
 
 export const SecondaryDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
     args: {
         theme: AppLinkTheme.SECONDARY,
     },
 };
 
 export const RedDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
     args: {
         theme: AppLinkTheme.RED,
     },

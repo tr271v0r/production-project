@@ -13,41 +13,24 @@ const meta: Meta<typeof AdminPanelPage> = {
         layout: 'fullscreen',
     },
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            StoreDecorator({})(Story)
-        ),
-        (Story) => (
-            RouterDecorator()(Story)
-        ),
+            StoreDecorator({})(Story),
+        (Story) => RouterDecorator()(Story),
     ],
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof AdminPanelPage>;
 
 export const AdminPanelPageLight: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
+    args: {},
 };
 
 export const AdminPanelPageDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
+    args: {},
 };

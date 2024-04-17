@@ -9,27 +9,21 @@ const meta: Meta<typeof ArticleRating> = {
     title: 'features/ArticleRating',
     component: ArticleRating,
     decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-        (Story) => (
-
+        (Story) => ThemeDecorator(Theme.LIGHT)(Story),
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 user: {
                     authData: { id: '1' },
                 },
-            })(Story)
-        ),
+            })(Story),
     ],
     parameters: {
         layout: 'fullscreen',
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;

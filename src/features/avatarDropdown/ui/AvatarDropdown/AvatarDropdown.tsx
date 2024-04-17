@@ -6,7 +6,10 @@ import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
 
 import {
-    getUserAuthData, isUserAdmin, isUserModerator, userActions,
+    getUserAuthData,
+    isUserAdmin,
+    isUserModerator,
+    userActions,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
@@ -37,12 +40,18 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
     return (
         <Dropdown
             className={classNames('', {}, [className])}
-            trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
+            trigger={
+                <Avatar fallbackInverted size={30} src={authData.avatar} />
+            }
             items={[
-                ...(isAdminPanelAvailable ? [{
-                    content: t('Админка'),
-                    href: getRouteAdminPanel(),
-                }] : []),
+                ...(isAdminPanelAvailable
+                    ? [
+                          {
+                              content: t('Админка'),
+                              href: getRouteAdminPanel(),
+                          },
+                      ]
+                    : []),
                 { content: 'Профиль', href: getRouteProfile(authData.id) },
                 { content: 'Выйти', onClick: onLogout },
             ]}

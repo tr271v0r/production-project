@@ -86,28 +86,19 @@ const meta: Meta<typeof ArticleDetailsPage> = {
     title: 'pages/ArticleDetailsPage',
     component: ArticleDetailsPage,
     decorators: [
-        (Story) => (
-            StoreDecorator({})(Story)
-        ),
-        (Story) => (
-            RouterDecorator()(Story)
-        ),
-        (Story) => (
+        (Story) => StoreDecorator({})(Story),
+        (Story) => RouterDecorator()(Story),
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            ThemeDecorator(Theme.LIGHT)(Story),
     ],
-    args: {
-
-    },
+    args: {},
     parameters: {
         layout: 'fullscreen',
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
@@ -115,42 +106,35 @@ type Story = StoryObj<typeof ArticleDetailsPage>;
 
 export const IsLoading: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 articleDetails: {
                     data: {},
                     isLoading: true,
-
                 },
-            })(Story)
-        ),
+            })(Story),
     ],
-    args: {
-
-    },
+    args: {},
 };
 
 export const Normal: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 articleDetails: {
                     data: article,
                     isLoading: false,
                 },
-            })(Story)
-        ),
+            })(Story),
     ],
-    args: {
-
-    },
+    args: {},
 };
 
 export const WithError: Story = {
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
                 articleDetails: {
@@ -158,10 +142,7 @@ export const WithError: Story = {
                     isLoading: false,
                     error: 'Some error',
                 },
-            })(Story)
-        ),
+            })(Story),
     ],
-    args: {
-
-    },
+    args: {},
 };

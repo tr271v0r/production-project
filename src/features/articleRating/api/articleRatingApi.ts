@@ -9,7 +9,7 @@ interface GetArticleArtingArg {
 interface RateArticleArg {
     userId: string;
     articleId: string;
-    rate:number;
+    rate: number;
     feedback?: string;
 }
 

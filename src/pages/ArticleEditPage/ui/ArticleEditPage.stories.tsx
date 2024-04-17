@@ -13,33 +13,20 @@ const meta: Meta<typeof ArticleEditPage> = {
         layout: 'fullscreen',
     },
     decorators: [
-        (Story) => (
-            StoreDecorator({})(Story)
-        ),
-        (Story) => (
-            RouterDecorator()(Story)
-        ),
-        (Story) => (
+        (Story) => StoreDecorator({})(Story),
+        (Story) => RouterDecorator()(Story),
+        (Story) =>
             // eslint-disable-next-line no-sequences
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+            ThemeDecorator(Theme.LIGHT)(Story),
     ],
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof ArticleEditPage>;
 
 export const Normal: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
+    args: {},
 };

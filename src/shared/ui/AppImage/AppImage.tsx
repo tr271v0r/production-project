@@ -1,8 +1,6 @@
-import {
-    ImgHTMLAttributes, memo, useLayoutEffect, useState,
-} from 'react';
+import { ImgHTMLAttributes, memo, useLayoutEffect, useState } from 'react';
 
-interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement>{
+interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     className?: string;
     fallback?: React.ReactElement;
     errorFallback?: React.ReactElement;
@@ -42,6 +40,12 @@ export const AppImage = memo((props: AppImageProps) => {
     }
 
     return (
-        <img decoding="async" className={className} src={src} alt={alt} {...otherProps} />
+        <img
+            decoding="async"
+            className={className}
+            src={src}
+            alt={alt}
+            {...otherProps}
+        />
     );
 });

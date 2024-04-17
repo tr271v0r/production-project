@@ -9,15 +9,9 @@ const meta: Meta<typeof Input> = {
     parameters: {
         layout: 'fullscreen',
     },
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;

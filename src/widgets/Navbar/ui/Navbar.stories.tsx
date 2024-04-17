@@ -13,16 +13,10 @@ const meta: Meta<typeof Navbar> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
     decorators: [
-        (Story) => (
-            StoreDecorator({})(Story)
-        ),
-        (Story) => (
-            RouterDecorator()(Story)
-        ),
+        (Story) => StoreDecorator({})(Story),
+        (Story) => RouterDecorator()(Story),
     ],
 };
 
@@ -30,31 +24,20 @@ export default meta;
 type Story = StoryObj<typeof Navbar>;
 
 export const Light: Story = {
-    args: {
-
-    },
+    args: {},
 };
 
 export const Dark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
+    args: {},
 };
 
 export const AuthNavbar: Story = {
-    args: {
-
-    },
+    args: {},
     decorators: [
-        (Story) => (
+        (Story) =>
             StoreDecorator({
                 user: { authData: {} },
-            })(Story)
-        ),
+            })(Story),
     ],
 };

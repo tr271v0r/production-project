@@ -15,7 +15,7 @@ const meta: Meta<typeof EditableProfileCard> = {
         layout: 'fullscreen',
     },
     decorators: [
-        (Story) => (
+        (Story) =>
             StoreDecorator({
                 profile: {
                     form: {
@@ -29,47 +29,26 @@ const meta: Meta<typeof EditableProfileCard> = {
                         avatar: AvatarImg,
                     },
                 },
-            })(Story)
-        ),
+            })(Story),
     ],
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof EditableProfileCard>;
 
 export const EditableProfileCardLight: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
+    args: {},
 };
 
 export const EditableProfileCardDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
+    args: {},
 };
 
 export const EditableProfileCardOrange: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.ORANGE)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.ORANGE)(Story)],
+    args: {},
 };

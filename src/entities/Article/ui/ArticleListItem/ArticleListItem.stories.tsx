@@ -13,17 +13,11 @@ const meta: Meta<typeof ArticleListItem> = {
         layout: 'centered',
     },
     decorators: [
-        (Story) => (
-            RouterDecorator()(Story)
-        ),
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
+        (Story) => RouterDecorator()(Story),
+        (Story) => ThemeDecorator(Theme.LIGHT)(Story),
     ],
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
@@ -41,12 +35,7 @@ const article = {
         username: 'admin',
         avatar: 'https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album',
     },
-    type: [
-        'IT',
-        'SCIENCE',
-        'POLITICS',
-        'ECOMOMICS',
-    ],
+    type: ['IT', 'SCIENCE', 'POLITICS', 'ECOMOMICS'],
     blocks: [
         {
             id: '1',

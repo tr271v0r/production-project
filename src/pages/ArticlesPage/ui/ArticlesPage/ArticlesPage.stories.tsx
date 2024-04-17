@@ -23,17 +23,12 @@ const meta: Meta<typeof ArticlesPage> = {
     title: 'pages/ArticlesPage',
     component: ArticlesPage,
     decorators: [
-        (Story) => (
+        (Story) =>
             // eslint-disable-next-line no-sequences
             StoreDecorator({
-                articlesPage: {
-
-                },
-            })(Story)
-        ),
-        (Story) => (
-            RouterDecorator()(Story)
-        ),
+                articlesPage: {},
+            })(Story),
+        (Story) => RouterDecorator()(Story),
     ],
     parameters: {
         layout: 'fullscreen',
@@ -52,43 +47,23 @@ const meta: Meta<typeof ArticlesPage> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof ArticlesPage>;
 
 export const ArticlesPageLight: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
+    args: {},
 };
 
 export const ArticlesPageDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
+    args: {},
 };
 
 export const ArticlesPageOrange: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.ORANGE)(Story)
-        ),
-    ],
-    args: {
-
-    },
+    decorators: [(Story) => ThemeDecorator(Theme.ORANGE)(Story)],
+    args: {},
 };

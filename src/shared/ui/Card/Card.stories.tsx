@@ -12,60 +12,40 @@ const meta: Meta<typeof Card> = {
     },
 
     tags: ['autodocs'],
-    argTypes: {
-
-    },
+    argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof Card>;
 
 export const CardLight: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.LIGHT)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
     args: {
         children: (
             <div>
-                <Text
-                    text="Карточка для светлой темы"
-                />
+                <Text text="Карточка для светлой темы" />
             </div>
         ),
     },
 };
 
 export const CardDark: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.DARK)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.DARK)(Story)],
     args: {
         children: (
             <div>
-                <Text
-                    text="Карточка для темной темы"
-                />
+                <Text text="Карточка для темной темы" />
             </div>
         ),
     },
 };
 
 export const CardOrange: Story = {
-    decorators: [
-        (Story) => (
-            ThemeDecorator(Theme.ORANGE)(Story)
-        ),
-    ],
+    decorators: [(Story) => ThemeDecorator(Theme.ORANGE)(Story)],
     args: {
         children: (
             <div>
-                <Text
-                    text="Карточка для оранжевой темы"
-                />
+                <Text text="Карточка для оранжевой темы" />
             </div>
         ),
     },
