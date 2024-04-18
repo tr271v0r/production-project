@@ -1,12 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
+import { Virtuoso } from 'react-virtuoso';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/Text';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 
 interface ArticleListProps {
     className?: string;
@@ -14,9 +15,10 @@ interface ArticleListProps {
     isLoading?: boolean;
     target?: HTMLAttributeAnchorTarget;
     view?: ArticleView;
+    onLoadNextPart?: () => void;
 }
 
-const getSkeletons = (view: ArticleView) =>
+const renderSkeletons = (view: ArticleView) =>
     new Array(view === ArticleView.SMALL ? 9 : 3)
         .fill(0)
         .map((item, index) => (
@@ -27,6 +29,21 @@ const getSkeletons = (view: ArticleView) =>
             />
         ));
 
+const renderArticles =
+    (view: ArticleView, target: HTMLAttributeAnchorTarget | undefined) =>
+    (_: number, item: Article) => {
+        const { id } = item;
+        return (
+            <ArticleListItem
+                article={item}
+                view={view}
+                target={target}
+                key={id}
+                className={cls.card}
+            />
+        );
+    };
+
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
         className,
@@ -34,12 +51,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
         view = ArticleView.SMALL,
         isLoading,
         target,
+        onLoadNextPart,
     } = props;
     const { t } = useTranslation();
-
-    // const articlesList = useCallback(() => {
-    //     if(view === ArticleView.BIG)
-    // }, [view])
 
     if (!isLoading && !articles.length) {
         return (
@@ -59,49 +73,19 @@ export const ArticleList = memo((props: ArticleListProps) => {
             className={classNames(cls.ArticleList, {}, [className, cls[view]])}
             data-testid="ArticleList"
         >
-            {articles.map((item) => (
-                <ArticleListItem
-                    article={item}
-                    view={view}
-                    target={target}
-                    key={item.id}
-                    className={cls.card}
+            {articles.length > 0 ? (
+                <Virtuoso
+                    style={{ height: 300 }}
+                    data={articles}
+                    endReached={onLoadNextPart}
+                    useWindowScroll
+                    customScrollParent={
+                        document.getElementById('PAGE_ID') as HTMLElement
+                    }
+                    itemContent={renderArticles(view, target)}
                 />
-            ))}
-
-            {/* <Virtuoso
-                style={{ height: '400px' }}
-                totalCount={200}
-                itemContent={(index) => (
-                    <div>
-                        Item
-                        {index}
-                    </div>
-                )}
-            /> */}
-
-            {isLoading && getSkeletons(view)}
+            ) : null}
+            {isLoading && renderSkeletons(view)}
         </div>
     );
 });
-/*
- <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {articles.map((item) => (
-                <ArticleListItem
-                    article={item}
-                    view={view}
-                    target={target}
-                    key={item.id}
-                    className={cls.card}
-                />
-            ))}
-
-            <Virtuoso
-                style={{ height: '400px' }}
-                totalCount={200}
-                itemContent={index => <div>Item {index}</div>}
-            />
-
-            {isLoading && getSkeletons(view)}
-        </div>
-*/
