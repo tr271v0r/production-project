@@ -15,6 +15,8 @@ interface ArticleListProps {
     isLoading?: boolean;
     target?: HTMLAttributeAnchorTarget;
     view?: ArticleView;
+
+    isVirtualized?: boolean;
     onLoadNextPart?: () => void;
 }
 
@@ -51,9 +53,22 @@ export const ArticleList = memo((props: ArticleListProps) => {
         view = ArticleView.SMALL,
         isLoading,
         target,
+
+        isVirtualized = false,
         onLoadNextPart,
     } = props;
+
     const { t } = useTranslation();
+
+    const renderArticle = (article: Article) => (
+        <ArticleListItem
+            article={article}
+            view={view}
+            className={cls.card}
+            key={article.id}
+            target={target}
+        />
+    );
 
     if (!isLoading && !articles.length) {
         return (
@@ -68,23 +83,37 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     }
 
+    if (isVirtualized) {
+        return (
+            <div
+                className={classNames(cls.ArticleList, {}, [
+                    className,
+                    cls[view],
+                ])}
+                data-testid="ArticleList"
+            >
+                {articles.length > 0 ? (
+                    <Virtuoso
+                        style={{ height: 300 }}
+                        data={articles}
+                        endReached={onLoadNextPart}
+                        useWindowScroll
+                        customScrollParent={
+                            document.getElementById('PAGE_ID') as HTMLElement
+                        }
+                        itemContent={renderArticles(view, target)}
+                    />
+                ) : null}
+                {isLoading && renderSkeletons(view)}
+            </div>
+        );
+    }
+
     return (
         <div
             className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-            data-testid="ArticleList"
         >
-            {articles.length > 0 ? (
-                <Virtuoso
-                    style={{ height: 300 }}
-                    data={articles}
-                    endReached={onLoadNextPart}
-                    useWindowScroll
-                    customScrollParent={
-                        document.getElementById('PAGE_ID') as HTMLElement
-                    }
-                    itemContent={renderArticles(view, target)}
-                />
-            ) : null}
+            {articles.length > 0 ? articles.map(renderArticle) : null}
             {isLoading && renderSkeletons(view)}
         </div>
     );

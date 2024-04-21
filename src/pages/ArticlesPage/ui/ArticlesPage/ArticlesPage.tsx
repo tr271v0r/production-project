@@ -24,6 +24,9 @@ const reducers: ReducersList = {
 };
 
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
+    // const data = useArticleItemById('1');
+    // console.log(data);
+
     const dispatch = useAppDispatch();
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());

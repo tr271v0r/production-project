@@ -34,6 +34,7 @@ export const ArticleInfiniteList = memo(
                 isLoading={isLoading}
                 view={view}
                 articles={articles}
+                isVirtualized
                 onLoadNextPart={onLoadNextPart}
             />
         );
