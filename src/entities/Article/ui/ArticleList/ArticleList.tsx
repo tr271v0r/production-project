@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { HTMLAttributeAnchorTarget, forwardRef, memo } from 'react';
-import { GridComponents, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
+import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/Text';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
@@ -46,36 +46,36 @@ const renderArticles =
         );
     };
 
-const gridComponents: GridComponents<any> = {
-    List: forwardRef(({ style, children, ...props }, ref) => (
-        <div
-            ref={ref}
-            {...props}
-            style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                ...style,
-            }}
-        >
-            {children}
-        </div>
-    )),
-    Item: ({ children, ...props }) => (
-        <div
-            {...props}
-            style={{
-                padding: '0.5rem',
-                width: '33%',
-                display: 'flex',
-                flex: 'none',
-                alignContent: 'stretch',
-                boxSizing: 'border-box',
-            }}
-        >
-            {children}
-        </div>
-    ),
-};
+// const gridComponents: GridComponents<any> = {
+//     List: forwardRef(({ style, children, ...props }, ref) => (
+//         <div
+//             ref={ref}
+//             {...props}
+//             style={{
+//                 display: 'flex',
+//                 flexWrap: 'wrap',
+//                 ...style,
+//             }}
+//         >
+//             {children}
+//         </div>
+//     )),
+//     Item: ({ children, ...props }) => (
+//         <div
+//             {...props}
+//             style={{
+//                 padding: '0.5rem',
+//                 width: '33%',
+//                 display: 'flex',
+//                 flex: 'none',
+//                 alignContent: 'stretch',
+//                 boxSizing: 'border-box',
+//             }}
+//         >
+//             {children}
+//         </div>
+//     ),
+// };
 
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
@@ -127,7 +127,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     {articles.length > 0 ? (
                         <VirtuosoGrid
                             style={{ height: 300 }}
-                            components={gridComponents}
+                            // components={gridComponents}
                             // endReached={onLoadNextPart}
                             // useWindowScroll
                             // customScrollParent={

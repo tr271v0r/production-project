@@ -15,7 +15,8 @@ import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlag } from '@/shared/lib/features';
+import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -35,6 +36,12 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     if (!id) {
         return null;
     }
+
+    const articleRatingCard = toggleFeatures({
+        name: 'isCounterEnabled',
+        on: () => <ArticleRating articleId={id} />,
+        off: () => <Card>{t('Оценка статей временно недоступна')}</Card>,
+    });
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
