@@ -623,20 +623,32 @@
             "username": "admin",
             "password": "123",
             "roles": ["ADMIN"],
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": true
+            },
             "avatar": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666178287_4-mykaleidoscope-ru-p-sostoyatelnii-chelovek-pinterest-4.jpg"
         },
         {
             "id": "2",
-            "username": "Дима Бутылкин",
+            "username": "user_II",
             "password": "123",
             "roles": ["USER"],
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": false
+            },
             "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album"
         },
         {
             "id": "3",
-            "username": "Полиция Нравов",
+            "username": "user_III",
             "password": "123",
             "roles": ["MODERATOR"],
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": false
+            },
             "avatar": "https://u.9111s.ru/uploads/202112/08/d0a4ab72edc863987211fcb4edcbab4f.jpg"
         },
         {
@@ -644,6 +656,10 @@
             "username": "testuser",
             "password": "123",
             "roles": ["ADMIN"],
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": true
+            },
             "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album"
         }
     ],
@@ -667,7 +683,7 @@
             "currency": "RUB",
             "country": "Russia",
             "city": "Moscow",
-            "username": "Дима Бутылкин",
+            "username": "user_II",
             "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album"
         },
         {
@@ -678,7 +694,7 @@
             "currency": "RUB",
             "country": "Russia",
             "city": "Moscow",
-            "username": "Полиция Нравов",
+            "username": "user_III",
             "avatar": "https://u.9111s.ru/uploads/202112/08/d0a4ab72edc863987211fcb4edcbab4f.jpg"
         },
         {
