@@ -671,7 +671,8 @@
       "jsonSettings": {
         "theme": "app_dark_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlePageWasOpened": true
       }
     },
     {
@@ -685,7 +686,10 @@
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false
       },
-      "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album"
+      "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album",
+      "jsonSettings": {
+        "isArticlePageWasOpened": true
+      }
     },
     {
       "id": "3",
@@ -698,7 +702,10 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": false
       },
-      "avatar": "https://u.9111s.ru/uploads/202112/08/d0a4ab72edc863987211fcb4edcbab4f.jpg"
+      "avatar": "https://u.9111s.ru/uploads/202112/08/d0a4ab72edc863987211fcb4edcbab4f.jpg",
+      "jsonSettings": {
+        "isArticlePageWasOpened": true
+      }
     },
     {
       "id": "4",
