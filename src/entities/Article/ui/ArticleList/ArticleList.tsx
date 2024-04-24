@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { HTMLAttributeAnchorTarget, memo } from 'react';
-import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
+import { HTMLAttributeAnchorTarget, forwardRef, memo } from 'react';
+import { GridComponents, Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/Text';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
@@ -46,36 +46,39 @@ const renderArticles =
         );
     };
 
-// const gridComponents: GridComponents<any> = {
-//     List: forwardRef(({ style, children, ...props }, ref) => (
-//         <div
-//             ref={ref}
-//             {...props}
-//             style={{
-//                 display: 'flex',
-//                 flexWrap: 'wrap',
-//                 ...style,
-//             }}
-//         >
-//             {children}
-//         </div>
-//     )),
-//     Item: ({ children, ...props }) => (
-//         <div
-//             {...props}
-//             style={{
-//                 padding: '0.5rem',
-//                 width: '33%',
-//                 display: 'flex',
-//                 flex: 'none',
-//                 alignContent: 'stretch',
-//                 boxSizing: 'border-box',
-//             }}
-//         >
-//             {children}
-//         </div>
-//     ),
-// };
+const gridComponents: GridComponents<Article> = {
+    // eslint-disable-next-line react/prop-types
+    List: forwardRef(({ style, children, ...props }, ref) => (
+        <div
+            ref={ref}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...props}
+            style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                ...style,
+            }}
+        >
+            {children}
+        </div>
+    )),
+    // eslint-disable-next-line react/prop-types
+    Item: ({ children, ...props }) => (
+        <div
+            {...props}
+            style={{
+                padding: '0.5rem',
+                width: '25%',
+                display: 'flex',
+                flex: 'none',
+                alignContent: 'stretch',
+                boxSizing: 'border-box',
+            }}
+        >
+            {children}
+        </div>
+    ),
+};
 
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
@@ -126,16 +129,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 >
                     {articles.length > 0 ? (
                         <VirtuosoGrid
-                            style={{ height: 300 }}
-                            // components={gridComponents}
-                            // endReached={onLoadNextPart}
-                            // useWindowScroll
-                            // customScrollParent={
-                            //     document.getElementById(
-                            //         'PAGE_ID',
-                            //     ) as HTMLElement
-                            // }
-                            itemContent={renderArticles(view, target)}
+                            style={{ height: 500 }}
+                            // totalCount={articles.length}
+                            components={gridComponents}
+                            // eslint-disable-next-line react/no-unstable-nested-components
+                            itemContent={(index, item) => {
+                                console.log(item);
+                                return <div>123</div>;
+                            }}
                         />
                     ) : null}
                     {isLoading && renderSkeletons(view)}

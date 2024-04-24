@@ -704,7 +704,8 @@
       },
       "avatar": "https://u.9111s.ru/uploads/202112/08/d0a4ab72edc863987211fcb4edcbab4f.jpg",
       "jsonSettings": {
-        "isArticlePageWasOpened": true
+        "isArticlePageWasOpened": true,
+        "theme": "app_orange_theme"
       }
     },
     {
