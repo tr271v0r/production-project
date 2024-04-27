@@ -2,10 +2,6 @@ import { Flex, FlexProps } from '../Flex/Flex';
 
 type VStackProps = Omit<FlexProps, 'direction'>;
 
-/**
- * @deprecated
- */
-
 // memo не юзаем из-за children  в пропсах - 100% всё равно перерисовка будет
 export const VStack = (props: VStackProps) => {
     const { align = 'start' } = props;

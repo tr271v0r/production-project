@@ -2,8 +2,8 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Dropdown } from '@/shared/ui/deprecated/Popups';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Dropdown as DeprecatedDropdown } from '@/shared/ui/deprecated/Popups';
+import { Avatar as DeprecatedAvatar } from '@/shared/ui/deprecated/Avatar';
 
 import {
     getUserAuthData,
@@ -13,6 +13,9 @@ import {
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { Dropdown } from '@/shared/ui/redesigned/Popups';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -37,25 +40,44 @@ export const AvatarDropdown = memo(({ className }: AvatarDropdownProps) => {
         return null;
     }
 
+    const items = [
+        ...(isAdminPanelAvailable
+            ? [
+                  {
+                      content: t('Админка'),
+                      href: getRouteAdminPanel(),
+                  },
+              ]
+            : []),
+        { content: 'Профиль', href: getRouteProfile(authData.id) },
+        { content: 'Выйти', onClick: onLogout },
+    ];
+
     return (
-        <Dropdown
-            className={classNames('', {}, [className])}
-            trigger={
-                <Avatar fallbackInverted size={30} src={authData.avatar} />
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+                <Dropdown
+                    className={classNames('', {}, [className])}
+                    trigger={<Avatar size={40} src={authData.avatar} />}
+                    items={items}
+                    direction="bottom left"
+                />
             }
-            items={[
-                ...(isAdminPanelAvailable
-                    ? [
-                          {
-                              content: t('Админка'),
-                              href: getRouteAdminPanel(),
-                          },
-                      ]
-                    : []),
-                { content: 'Профиль', href: getRouteProfile(authData.id) },
-                { content: 'Выйти', onClick: onLogout },
-            ]}
-            direction="bottom left"
+            off={
+                <DeprecatedDropdown
+                    className={classNames('', {}, [className])}
+                    trigger={
+                        <DeprecatedAvatar
+                            fallbackInverted
+                            size={30}
+                            src={authData.avatar}
+                        />
+                    }
+                    items={items}
+                    direction="bottom left"
+                />
+            }
         />
     );
 });
