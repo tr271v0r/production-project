@@ -12,11 +12,10 @@ import { Text } from '@/shared/ui/deprecated/Text';
 
 interface ArticleInfiniteListProps {
     className?: string;
-    onLoadNextPart?: () => void;
 }
 
 export const ArticleInfiniteList = memo(
-    ({ className, onLoadNextPart }: ArticleInfiniteListProps) => {
+    ({ className }: ArticleInfiniteListProps) => {
         const articles = useSelector(getArticles.selectAll);
         const isLoading = useSelector(getArticlesPageIsLoading);
         const error = useSelector(getArticlesPageError);
@@ -34,8 +33,6 @@ export const ArticleInfiniteList = memo(
                 isLoading={isLoading}
                 view={view}
                 articles={articles}
-                isVirtualized
-                onLoadNextPart={onLoadNextPart}
             />
         );
     },
