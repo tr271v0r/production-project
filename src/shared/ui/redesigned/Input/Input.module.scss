@@ -4,8 +4,19 @@
     border-radius: 48px;
     padding: 8px 16px;
     border: 2px solid var(--icon-redesigned);
-    height: 32px;
     width: 100%;
+}
+
+.s {
+    line-height: 32px;
+}
+
+.m {
+    line-height: 38px;
+}
+
+.l {
+    line-height: 44px;
 }
 
 .addonLeft,
