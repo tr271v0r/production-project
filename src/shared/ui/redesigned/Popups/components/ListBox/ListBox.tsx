@@ -8,6 +8,8 @@ import { HStack } from '../../../../redesigned/Stack';
 import { DropdownDirection } from '@/shared/types/ui';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
+import { Icon } from '../../../Icon';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 
 const people = [
     { id: 1, name: 'Durward Reynolds', unavailable: false },
@@ -69,7 +71,11 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                 onChange={onChange}
             >
                 <HListBox.Button disabled={readonly} className={cls.trigger}>
-                    <Button variant="filled" disabled={readonly}>
+                    <Button
+                        variant="filled"
+                        disabled={readonly}
+                        addonRight={<Icon Svg={ArrowIcon} />}
+                    >
                         {selectedItem?.content ?? defaultValue}
                     </Button>
                 </HListBox.Button>
