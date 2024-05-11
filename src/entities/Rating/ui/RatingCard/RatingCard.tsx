@@ -205,7 +205,7 @@ export const RatingCard = memo((props: RatingProps) => {
                 <Card
                     className={className}
                     max
-                    border="round"
+                    border="partial"
                     data-testid="RatingCard"
                 >
                     {content}

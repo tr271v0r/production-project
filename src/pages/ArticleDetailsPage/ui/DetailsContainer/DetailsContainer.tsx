@@ -10,7 +10,13 @@ interface DetailsContainerProps {
 export const DetailsContainer = memo(({ className }: DetailsContainerProps) => {
     const { id } = useParams<{ id: string }>();
     return (
-        <Card fullHeight max border="round" className={className} padding="24">
+        <Card
+            fullHeight
+            max
+            border="partial"
+            className={className}
+            padding="24"
+        >
             <ArticleDetails id={id} />
         </Card>
     );
