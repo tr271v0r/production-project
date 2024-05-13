@@ -8,6 +8,7 @@ import { getUserAuthData } from '@/entities/User';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 
 interface UiDesignSwitcherProps {
     className?: string;
@@ -23,6 +24,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
 
     const authData = useSelector(getUserAuthData);
     const [isLoading, setIsLoading] = useState(false);
+    const forceUpdate = useForceUpdate();
 
     const onChange = async (value: string) => {
         if (authData) {
@@ -36,6 +38,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
                 }),
             ).unwrap();
             setIsLoading(false);
+            forceUpdate();
         }
     };
 

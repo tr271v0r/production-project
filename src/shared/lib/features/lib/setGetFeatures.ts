@@ -2,6 +2,10 @@ import { FeatureFlags } from '@/shared/types/featureFlags';
 
 let featureFlags: FeatureFlags;
 
+// context
+// state
+// realod the page
+// костыль
 export function setFeatureFlags(newFeatureFlags?: FeatureFlags) {
     if (newFeatureFlags) {
         featureFlags = newFeatureFlags;
