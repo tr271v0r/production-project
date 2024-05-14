@@ -682,7 +682,7 @@
       },
       "avatar": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666178287_4-mykaleidoscope-ru-p-sostoyatelnii-chelovek-pinterest-4.jpg",
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlePageWasOpened": true
@@ -698,7 +698,7 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false,
-        "isAppRedesigned": true
+        "isAppRedesigned": false
       },
       "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album",
       "jsonSettings": {
