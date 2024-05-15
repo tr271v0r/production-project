@@ -4,6 +4,12 @@ import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator
 import { Theme } from '../../src/shared/const/theme';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
+import { FeatureFlagsDecorator } from '../../src/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
+import { FeatureFlags } from '../../src/shared/types/featureFlags';
+
+const defaults: FeatureFlags = {
+    isAppRedesigned: true,
+};
 
 const preview: Preview = {
     decorators: [
@@ -11,7 +17,8 @@ const preview: Preview = {
             // eslint-disable-next-line no-sequences
             ThemeDecorator(Theme.LIGHT)(Story),
             RouterDecorator()(Story),
-            SuspenseDecorator()(Story)
+            SuspenseDecorator()(Story),
+            FeatureFlagsDecorator(defaults)(Story)
         ),
     ],
     parameters: {

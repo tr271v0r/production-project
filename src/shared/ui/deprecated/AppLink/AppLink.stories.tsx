@@ -6,7 +6,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const meta: Meta<typeof AppLink> = {
-    title: 'shared/AppLink',
+    title: 'deprecated/shared/AppLink',
     component: AppLink,
     parameters: {
         layout: 'fullscreen',

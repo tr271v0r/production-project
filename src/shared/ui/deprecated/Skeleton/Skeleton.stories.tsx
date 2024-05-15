@@ -4,7 +4,7 @@ import { Theme } from '@/shared/const/theme';
 import { Skeleton } from './Skeleton';
 
 const meta: Meta<typeof Skeleton> = {
-    title: 'shared/Skeleton',
+    title: 'deprecated/shared/Skeleton',
     component: Skeleton,
     parameters: {
         layout: 'fullscreen',

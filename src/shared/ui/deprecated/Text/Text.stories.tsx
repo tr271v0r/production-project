@@ -4,7 +4,7 @@ import { Theme } from '@/shared/const/theme';
 import { Text, TextSize, TextTheme } from './Text';
 
 const meta: Meta<typeof Text> = {
-    title: 'shared/Text',
+    title: 'deprecated/shared/Text',
     component: Text,
     parameters: {
         layout: 'fullscreen',

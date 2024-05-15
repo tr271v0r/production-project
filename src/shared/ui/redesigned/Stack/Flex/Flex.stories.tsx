@@ -4,7 +4,7 @@ import { Theme } from '@/shared/const/theme';
 import { Flex } from './Flex';
 
 const meta: Meta<typeof Flex> = {
-    title: 'shared/Flex',
+    title: 'redesigned/shared/Flex',
     component: Flex,
     decorators: [(Story) => ThemeDecorator(Theme.LIGHT)(Story)],
     parameters: {

@@ -5,6 +5,7 @@ import { Theme } from '@/shared/const/theme';
 import { CommentCard } from './CommentCard';
 import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 import Img from '@/shared/assets/tests/storybook.jpg';
+import { DeprecatedDecorator } from '@/shared/config/storybook/DeprecatedDecorator/DeprecatedDecorator';
 
 const meta: Meta<typeof CommentCard> = {
     title: 'entities/Comment/CommentCard',
@@ -26,23 +27,37 @@ const meta: Meta<typeof CommentCard> = {
 export default meta;
 type Story = StoryObj<typeof CommentCard>;
 
-export const Normal: Story = {
-    args: {
-        comment: {
-            id: '1',
-            text: 'Hello guys!',
-            user: { id: '1', username: 'Oleg Nagib', avatar: Img },
-        },
+const normalArgs = {
+    comment: {
+        id: '1',
+        text: 'Hello guys!',
+        user: { id: '1', username: 'Oleg Nagib', avatar: Img },
     },
 };
 
-export const IsLoading: Story = {
-    args: {
-        comment: {
-            id: '1',
-            text: 'something',
-            user: { id: '1', username: 'Oleg' },
-        },
-        isLoading: true,
+export const Normal: Story = {
+    args: normalArgs,
+};
+
+export const NormalDeprecated: Story = {
+    args: normalArgs,
+    decorators: [(Story) => DeprecatedDecorator(Story)],
+};
+
+const isLoadingArgs = {
+    comment: {
+        id: '1',
+        text: 'something',
+        user: { id: '1', username: 'Oleg' },
     },
+    isLoading: true,
+};
+
+export const NormalIsLoading: Story = {
+    args: isLoadingArgs,
+};
+
+export const NormalDeprecatedIsLoading: Story = {
+    args: isLoadingArgs,
+    decorators: [(Story) => DeprecatedDecorator(Story)],
 };

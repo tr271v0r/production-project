@@ -4,7 +4,7 @@ import { Theme } from '@/shared/const/theme';
 import { ListBox } from './ListBox';
 
 const meta: Meta<typeof ListBox> = {
-    title: 'shared/ListBox',
+    title: 'deprecated/shared/ListBox',
     component: ListBox,
     decorators: [
         (Story) => ThemeDecorator(Theme.LIGHT)(Story),

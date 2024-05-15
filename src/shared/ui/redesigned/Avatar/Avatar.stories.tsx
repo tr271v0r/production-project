@@ -3,7 +3,7 @@ import AvatarImg from '@/shared/assets/tests/storybook.jpg';
 import { Avatar } from './Avatar';
 
 const meta: Meta<typeof Avatar> = {
-    title: 'shared/Avatar',
+    title: 'redesigned/shared/Avatar',
     component: Avatar,
     parameters: {
         layout: 'fullscreen',

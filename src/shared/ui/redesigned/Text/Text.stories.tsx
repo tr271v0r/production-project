@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Text } from './Text';
 
 const meta: Meta<typeof Text> = {
-    title: 'shared/Text',
+    title: 'redesigned/shared/Text',
     component: Text,
     parameters: {
         layout: 'fullscreen',

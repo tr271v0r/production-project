@@ -4,7 +4,7 @@ import { Theme } from '@/shared/const/theme';
 import { Code } from './Code';
 
 const meta: Meta<typeof Code> = {
-    title: 'shared/Code',
+    title: 'redesigned/shared/Code',
     component: Code,
     parameters: {
         layout: 'fullscreen',
@@ -22,7 +22,7 @@ export const CodeDark: Story = {
     args: {
         text:
             'const meta: Meta<typeof Code> = {\n' +
-            "   title: 'shared/Code',\n" +
+            "   title: 'deprecated/shared/Code',\n" +
             '   component: Code,\n' +
             '   parameters: {\n' +
             "       'layout:'centered',\n" +
@@ -43,7 +43,7 @@ export const CodeLight: Story = {
     args: {
         text:
             'const meta: Meta<typeof Code> = {\n' +
-            "   title: 'shared/Code',\n" +
+            "   title: 'deprecated/shared/Code',\n" +
             '   component: Code,\n' +
             '   parameters: {\n' +
             "       'layout:'centered',\n" +
@@ -64,7 +64,7 @@ export const CodeOrange: Story = {
     args: {
         text:
             'const meta: Meta<typeof Code> = {\n' +
-            "   title: 'shared/Code',\n" +
+            "   title: 'deprecated/shared/Code',\n" +
             '   component: Code,\n' +
             '   parameters: {\n' +
             "       'layout:'centered',\n" +

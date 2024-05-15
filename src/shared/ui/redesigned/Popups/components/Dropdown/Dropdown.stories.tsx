@@ -5,7 +5,7 @@ import { Dropdown } from './Dropdown';
 import { Button } from '../../../Button/Button';
 
 const meta: Meta<typeof Dropdown> = {
-    title: 'shared/Dropdown',
+    title: 'redesigned/shared/Dropdown',
     component: Dropdown,
     decorators: [
         (Story) => ThemeDecorator(Theme.LIGHT)(Story),

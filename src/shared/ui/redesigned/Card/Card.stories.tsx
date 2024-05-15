@@ -5,7 +5,7 @@ import { Card } from './Card';
 import { Text } from '../Text/Text';
 
 const meta: Meta<typeof Card> = {
-    title: 'shared/Card',
+    title: 'redesigned/shared/Card',
     component: Card,
     parameters: {
         layout: 'fullscreen',
