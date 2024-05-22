@@ -37,10 +37,10 @@
     {
       "id": "1",
       "title": "Javascript news СВЕЖАЯ",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
-      "createdAt": "26.04.2022",
+      "createdAt": "26.04.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -109,10 +109,10 @@
     {
       "id": "2",
       "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://mpng.hippopng.com/20180720/ur/kisspng-logo-brand-font-python-5b51d2136c4285.3422375115320888514434.jpg",
       "views": 5204,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -133,7 +133,7 @@
     {
       "id": "3",
       "title": "Kotlin news 2019",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://pluspng.com/img-png/kotlin-logo-png-kotlin-icon-blue-cobalt-blue-electric-blue-line-azure-logo-910x910.png",
       "views": 94002,
       "createdAt": "26.02.2019",
@@ -157,10 +157,10 @@
     {
       "id": "4",
       "title": "Scala news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://e7.pngegg.com/pngimages/875/194/png-clipart-scala-apache-spark-apache-hadoop-stream-big-data-scala-class-text.png",
       "views": 10222,
-      "createdAt": "24.01.2022",
+      "createdAt": "24.01.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -181,7 +181,7 @@
     {
       "id": "5",
       "title": "Golang news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://sergeyem.ru/storage/posts/February2023/7hrhZWoWWvRQw3QAcqQT.jpg.webp",
       "views": 10222,
       "createdAt": "26.02.2020",
@@ -205,10 +205,10 @@
     {
       "id": "6",
       "title": "Java news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://andreyex.ru/wp-content/uploads/2018/05/Kak-ustanovit-Java-s-apt-na-Ubuntu-18.04.jpg",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -229,10 +229,10 @@
     {
       "id": "7",
       "title": "Ruby news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://res.cloudinary.com/practicaldev/image/fetch/s--oqV3akcU--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/pgnw91fs7tpxn0wyeqh2.jpg",
       "views": 100,
-      "createdAt": "21.02.2022",
+      "createdAt": "21.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -253,10 +253,10 @@
     {
       "id": "8",
       "title": "TypeScript news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://static-assets.pratilipi.com/profile-avatar-defaults/512x512/en-TS-1-x512.png?quality=low&type=webp&width=50",
       "views": 102222,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -277,10 +277,10 @@
     {
       "id": "9",
       "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://www.clipartmax.com/png/middle/238-2381243_safeness-kotlin-android-logo.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -301,10 +301,10 @@
     {
       "id": "10",
       "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://mpng.hippopng.com/20180720/ur/kisspng-logo-brand-font-python-5b51d2136c4285.3422375115320888514434.jpg",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -325,10 +325,10 @@
     {
       "id": "11",
       "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://kotlinlang.org/docs/images/kotlin-logo.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -349,10 +349,10 @@
     {
       "id": "12",
       "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://www.python.org/static/img/psf-logo.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -373,10 +373,10 @@
     {
       "id": "13",
       "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://kotlinlang.org/docs/images/kotlin-logo.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -397,10 +397,10 @@
     {
       "id": "14",
       "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://www.python.org/static/img/psf-logo.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -421,10 +421,10 @@
     {
       "id": "15",
       "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://kotlinlang.org/docs/images/kotlin-logo.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -445,10 +445,10 @@
     {
       "id": "16",
       "title": "Python news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://www.python.org/static/img/psf-logo.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -469,10 +469,10 @@
     {
       "id": "17",
       "title": "Kotlin news",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "subtitle": "Что нового в JS за 2024 год?",
       "img": "https://kotlinlang.org/docs/images/kotlin-logo.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "IT"
@@ -496,7 +496,7 @@
       "subtitle": "Экономика",
       "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "ECONOMICS"
@@ -520,7 +520,7 @@
       "subtitle": "БиологиЯ",
       "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2024",
       "userId": "1",
       "type": [
         "SCIENCE"
@@ -665,6 +665,12 @@
       "userId": "1",
       "text": ";D",
       "id": "SR4r5EB"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "This article is not enough good edited that to public her",
+      "id": "ITd0gRC"
     }
   ],
   "users": [
@@ -680,9 +686,9 @@
         "isCounterEnabled": true,
         "isAppRedesigned": true
       },
-      "avatar": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666178287_4-mykaleidoscope-ru-p-sostoyatelnii-chelovek-pinterest-4.jpg",
+      "avatar": "https://sh3-kasimov-r62.gosweb.gosuslugi.ru/netcat_files/9/67/1549710258.jpg",
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlePageWasOpened": true
@@ -690,52 +696,56 @@
     },
     {
       "id": "2",
-      "username": "user_II",
-      "password": "123",
+      "username": "GarryStr0ng",
+      "password": "123456Seven",
       "roles": [
         "USER"
       ],
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false,
-        "isAppRedesigned": false
+        "isAppRedesigned": true
       },
       "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album",
       "jsonSettings": {
-        "theme": "app_dark_theme"
+        "theme": "app_dark_theme",
+        "isArticlePageWasOpened": true
       }
     },
     {
       "id": "3",
-      "username": "user_III",
-      "password": "123",
+      "username": "Kondratyev_1970",
+      "password": "f8Hd76Fs67s",
       "roles": [
         "MODERATOR"
       ],
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": false,
-        "isAppRedesigned": false
+        "isAppRedesigned": true
       },
-      "avatar": "https://u.9111s.ru/uploads/202112/08/d0a4ab72edc863987211fcb4edcbab4f.jpg",
+      "avatar": "http://www.mforum.ru/cmsbin/2016/24/VKondratev_full600x900.jpg",
       "jsonSettings": {
         "isArticlePageWasOpened": true,
-        "theme": "app_orange_theme"
+        "theme": "app_dark_theme"
       }
     },
     {
       "id": "4",
       "username": "testuser",
-      "password": "123",
+      "password": "#_Str0ngPassword2024XYZ!",
       "roles": [
         "ADMIN"
       ],
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": true,
-        "isAppRedesigned": false
+        "isAppRedesigned": true
       },
-      "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album"
+      "avatar": "https://www.peoples.ru/sport/football/sergey_andreevich_ivanov/vHHAciRaJ55EF.jpeg",
+      "jsonSettings": {
+        "isArticlePageWasOpened": true
+      }
     }
   ],
   "profile": [
@@ -748,40 +758,40 @@
       "country": "Belarus",
       "city": "New York",
       "username": "admin",
-      "avatar": "https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666178287_4-mykaleidoscope-ru-p-sostoyatelnii-chelovek-pinterest-4.jpg"
+      "avatar": "https://sh3-kasimov-r62.gosweb.gosuslugi.ru/netcat_files/9/67/1549710258.jpg"
     },
     {
       "id": "2",
-      "first": "Дима",
-      "lastname": "Бутылкин",
+      "first": "Garry",
+      "lastname": "Chester",
       "age": 465,
       "currency": "RUB",
       "country": "Russia",
       "city": "Moscow",
-      "username": "user_II",
+      "username": "GarryStr0ng",
       "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album"
     },
     {
       "id": "3",
-      "first": "Валерий",
-      "lastname": "Жмышенко",
+      "first": "Владимир",
+      "lastname": "Кондратьев",
       "age": 54,
       "currency": "RUB",
       "country": "Russia",
       "city": "Moscow",
-      "username": "user_III",
-      "avatar": "https://u.9111s.ru/uploads/202112/08/d0a4ab72edc863987211fcb4edcbab4f.jpg"
+      "username": "Kondratyev_1970",
+      "avatar": "http://www.mforum.ru/cmsbin/2016/24/VKondratev_full600x900.jpg"
     },
     {
       "id": "4",
-      "first": "Rex",
-      "lastname": "Incc",
+      "first": "Иван",
+      "lastname": "Иванов",
       "age": 19,
       "currency": "RUB",
       "country": "Russia",
       "city": "Moscow",
       "username": "testuser",
-      "avatar": "https://sun9-44.userapi.com/impg/c858432/v858432560/14fabc/Y3aLwiPNhPE.jpg?size=768x617&quality=96&sign=123e3564f6685164a76c6aebce66ef83&type=album"
+      "avatar": "https://www.peoples.ru/sport/football/sergey_andreevich_ivanov/vHHAciRaJ55EF.jpeg"
     }
   ],
   "article-ratings": [
@@ -833,6 +843,19 @@
       "userId": "1",
       "feedback": "Not bad!",
       "id": "afvzluo"
+    },
+    {
+      "articleId": "11",
+      "rate": 4,
+      "userId": "1",
+      "feedback": "wow",
+      "id": "m2s_0__"
+    },
+    {
+      "articleId": "15",
+      "rate": 2,
+      "userId": "1",
+      "id": "iFmVwRt"
     }
   ],
   "profile-ratings": [
