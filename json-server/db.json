@@ -756,7 +756,7 @@
       "age": 24,
       "currency": "EUR",
       "country": "Belarus",
-      "city": "New York",
+      "city": "Minsk",
       "username": "admin",
       "avatar": "https://sh3-kasimov-r62.gosweb.gosuslugi.ru/netcat_files/9/67/1549710258.jpg"
     },
@@ -856,6 +856,13 @@
       "rate": 2,
       "userId": "1",
       "id": "iFmVwRt"
+    },
+    {
+      "articleId": "14",
+      "rate": 1,
+      "userId": "1",
+      "feedback": "Отстой!",
+      "id": "-3-w3SC"
     }
   ],
   "profile-ratings": [
